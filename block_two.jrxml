@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-08-10T10:46:08 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="房室传导阻滞" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="31c5bd3e-7f1a-4ab1-b4e4-a617f592984c">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PauseDataAdapter.xml"/>
+	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
+	<parameter name="START_PAGE" class="java.lang.Integer"/>
+	<parameter name="nums" class="java.lang.Integer"/>
+	<parameter name="max_pause" class="java.lang.Integer"/>
+	<parameter name="max_duration" class="java.lang.String"/>
+	<parameter name="range" class="java.lang.String"/>
+	<parameter name="sn" class="java.lang.String"/>
+	<parameter name="copyright" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="duration" class="java.lang.String">
+		<fieldDescription><![CDATA[duration]]></fieldDescription>
+	</field>
+	<field name="average" class="java.lang.String">
+		<fieldDescription><![CDATA[average]]></fieldDescription>
+	</field>
+	<field name="rateData1" class="java.util.Map">
+		<fieldDescription><![CDATA[rateData1]]></fieldDescription>
+	</field>
+	<field name="dataList" class="java.util.List">
+		<fieldDescription><![CDATA[dataList]]></fieldDescription>
+	</field>
+	<field name="eventTime" class="java.lang.String">
+		<fieldDescription><![CDATA[eventTime]]></fieldDescription>
+	</field>
+	<field name="beats" class="java.lang.String">
+		<fieldDescription><![CDATA[beats]]></fieldDescription>
+	</field>
+	<field name="eventName" class="java.lang.String">
+		<fieldDescription><![CDATA[eventName]]></fieldDescription>
+	</field>
+	<field name="range" class="java.lang.String">
+		<fieldDescription><![CDATA[range]]></fieldDescription>
+	</field>
+	<field name="rateData2" class="java.util.Map">
+		<fieldDescription><![CDATA[rateData2]]></fieldDescription>
+	</field>
+	<field name="eventDate" class="java.lang.String">
+		<fieldDescription><![CDATA[eventDate]]></fieldDescription>
+	</field>
+	<field name="index" class="java.lang.Integer">
+		<fieldDescription><![CDATA[index]]></fieldDescription>
+	</field>
+	<field name="ptTrigger" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[ptTrigger]]></fieldDescription>
+	</field>
+	<field name="ptTriggerShow" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[ptTriggerShow]]></fieldDescription>
+	</field>
+	<title>
+		<band height="391">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement x="1" y="2" width="324" height="28" uuid="69af078f-cdf8-416a-ae48-03a320d45667">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="黑体" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[房室传导阻滞]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="36" width="34" height="14" uuid="9c522cf9-4cc8-4dce-b9e0-0e24ebc26308">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<text><![CDATA[数量]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="57" width="575" height="1" uuid="201a575a-e04c-45b9-b879-6e1061d2d38d">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+			<componentElement>
+				<reportElement key="" x="10" y="67" width="554" height="150" uuid="e5de589e-a90e-4952-8929-a284041c2ccb"/>
+				<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd" evaluationTime="Page">
+					<cvc:itemProperty name="script" value="ecgpause/ecgpause.min.js"/>
+					<cvc:itemProperty name="module" value="EcgPause"/>
+					<cvc:cvData>
+						<dataset/>
+						<cvc:item>
+							<cvc:itemProperty name="list">
+								<valueExpression><![CDATA[$F{rateData1}]]></valueExpression>
+							</cvc:itemProperty>
+						</cvc:item>
+					</cvc:cvData>
+				</cvc:customvisualization>
+			</componentElement>
+			<componentElement>
+				<reportElement key="" x="10" y="235" width="554" height="150" uuid="78ca2825-fdd5-410a-86e6-1fffb1561e6c"/>
+				<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd" evaluationTime="Page">
+					<cvc:itemProperty name="script" value="ecgpause/ecgpause.min.js"/>
+					<cvc:itemProperty name="module" value="EcgPause"/>
+					<cvc:cvData>
+						<dataset/>
+						<cvc:item>
+							<cvc:itemProperty name="list">
+								<valueExpression><![CDATA[$F{rateData2}]]></valueExpression>
+							</cvc:itemProperty>
+						</cvc:item>
+					</cvc:cvData>
+				</cvc:customvisualization>
+			</componentElement>
+			<line>
+				<reportElement x="0" y="225" width="575" height="2" uuid="a7dcf99f-9c28-441d-822a-a0307761f928"/>
+			</line>
+			<textField>
+				<reportElement x="41" y="36" width="59" height="14" uuid="f6c5e692-d4b6-4b7e-b996-92e149af77ed">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font fontName="华文宋体" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nums}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="103" y="36" width="87" height="14" uuid="f9e750cc-60ac-416c-b437-7a06972eb180">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<text><![CDATA[最大次数 (每小时）]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="36" width="64" height="14" uuid="da982f37-2a8e-4c01-8cc5-7101082f6e90">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font fontName="华文宋体" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{max_pause}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="254" y="36" width="50" height="14" uuid="0e973287-a27f-43ed-b45d-b9c39af85260">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<text><![CDATA[最大时长]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="305" y="36" width="65" height="14" uuid="1f937148-0d27-4dbe-8dca-ef57e662720c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font fontName="华文宋体" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{max_duration}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="374" y="36" width="28" height="14" uuid="c3d46d3f-a9d3-4353-b531-7d230118c285">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<text><![CDATA[范围]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="406" y="36" width="100" height="14" uuid="aacf4cc4-5ff2-427a-8385-048879105748">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font fontName="华文宋体" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{range}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="193" splitType="Immediate">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<componentElement>
+				<reportElement x="1" y="49" width="573" height="128" isPrintWhenDetailOverflows="true" uuid="ae4bdf8f-435e-44e5-98f8-96703fbde9c0">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd">
+					<cvc:itemProperty name="script" value="ecgdata/ecgdata.min.js"/>
+					<cvc:itemProperty name="module" value="EcgData"/>
+					<cvc:cvData>
+						<dataset/>
+						<cvc:item>
+							<cvc:itemProperty name="list">
+								<valueExpression><![CDATA[$F{dataList}]]></valueExpression>
+							</cvc:itemProperty>
+							<cvc:itemProperty name="duration">
+								<valueExpression><![CDATA[$F{duration}]]></valueExpression>
+							</cvc:itemProperty>
+						</cvc:item>
+					</cvc:cvData>
+				</cvc:customvisualization>
+			</componentElement>
+			<textField>
+				<reportElement x="43" y="12" width="140" height="14" uuid="e87a0557-7bde-47ad-869e-cc6fcf451b53">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{eventName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="43" y="30" width="60" height="14" uuid="72294e6c-52e5-4ab1-9260-fccc966c6ff1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{eventDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="103" y="30" width="70" height="14" uuid="f1ece3f8-2193-4db6-b74d-a91a6ccdb8db">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{eventTime}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement mode="Opaque" x="512" y="10" width="60" height="38" backcolor="#DDECF4" uuid="baacd791-d4bd-444a-9641-1a9fb2548885">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{ptTriggerShow}]]></printWhenExpression>
+				</reportElement>
+				<staticText>
+					<reportElement x="11" y="0" width="38" height="11" uuid="d4cecc9d-703b-4780-ac13-63dac1266237">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Center">
+						<font fontName="华文宋体" size="7"/>
+					</textElement>
+					<text><![CDATA[用户触发]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="15" y="25" width="10" height="11" uuid="d98f2314-4454-4bbf-98aa-70cdf27f30e4">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Center">
+						<font fontName="华文宋体" size="7"/>
+					</textElement>
+					<text><![CDATA[是]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="35" y="25" width="10" height="11" uuid="bfa70c42-e290-4094-894c-d1649ce94059">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Center">
+						<font fontName="华文宋体" size="7"/>
+					</textElement>
+					<text><![CDATA[否]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement mode="Transparent" x="15" y="13" width="9" height="9" uuid="78ab3653-6671-4c10-b90c-600d970322cb">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="0.6"/>
+					</graphicElement>
+				</rectangle>
+				<line direction="BottomUp">
+					<reportElement x="15" y="13" width="9" height="9" uuid="675b45f2-5525-4800-9966-537d8179cfd9">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<printWhenExpression><![CDATA[$F{ptTrigger}]]></printWhenExpression>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="0.6"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="15" y="13" width="9" height="9" uuid="5a1f477f-bff9-471c-a610-685be44814cc">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<printWhenExpression><![CDATA[$F{ptTrigger}]]></printWhenExpression>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="0.6"/>
+					</graphicElement>
+				</line>
+				<rectangle>
+					<reportElement mode="Transparent" x="35" y="13" width="9" height="9" uuid="02b62b74-4230-41c1-bafa-f7ca54e3d062">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="0.6"/>
+					</graphicElement>
+				</rectangle>
+				<line>
+					<reportElement x="35" y="13" width="9" height="9" uuid="3d762125-63ac-4fdf-8ddb-9e0e4f8c8202">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<printWhenExpression><![CDATA[!$F{ptTrigger}]]></printWhenExpression>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="0.6"/>
+					</graphicElement>
+				</line>
+				<line direction="BottomUp">
+					<reportElement x="35" y="13" width="9" height="9" uuid="398577b0-0f31-4f83-9226-41f24351db12">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<printWhenExpression><![CDATA[!$F{ptTrigger}]]></printWhenExpression>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="0.6"/>
+					</graphicElement>
+				</line>
+			</frame>
+			<ellipse>
+				<reportElement x="10" y="18" width="20" height="20" backcolor="#050505" uuid="a2863580-bf27-48f6-b62c-b4b7e489bc85">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+			</ellipse>
+			<textField>
+				<reportElement x="16" y="20" width="10" height="18" forecolor="#FFFFFF" uuid="f5854b27-7a05-4ec0-8261-68a98e833803">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{index}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="8" width="575" height="1" uuid="e2724e06-8313-4ece-b75f-1deb133d0177">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="367" y="30" width="60" height="14" uuid="71efb3c9-15c3-424f-bb7b-f5d0740eb44c"/>
+				<textElement>
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{average}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="12" width="60" height="14" uuid="9a5d9df6-0d6d-4046-ada2-39de9c50fab4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[时长]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="280" y="30" width="60" height="14" uuid="5d7331ad-c778-4344-8b67-cff6adfc092f"/>
+				<textElement>
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{duration}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="367" y="12" width="60" height="14" uuid="475182dc-3425-4d4f-a850-300afd8440a3">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[平均心率]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="456" y="12" width="50" height="14" uuid="83d51465-dcd6-45b2-b5c8-3091621a1328">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[心率范围]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="456" y="30" width="50" height="14" uuid="783e4265-8313-47cb-ba8f-5e977f7ca78b"/>
+				<textElement>
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{range}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="25">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="177" y="11" width="220" height="14" uuid="7cac03fa-aeb4-4b91-89fa-f6f3e0c005d0">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{copyright}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="491" y="11" width="84" height="14" uuid="e6651c28-df92-40fa-a259-2863dcd41881">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+$P{START_PAGE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="11" width="100" height="14" uuid="3ad4b854-75e3-4e06-9c64-a0d6fb549e75">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sn}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

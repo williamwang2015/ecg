@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-08-04T10:48:46 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="summary_sub" pageWidth="360" pageHeight="550" columnWidth="360" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="f4b4309f-a488-4203-a717-c4e30870a30b">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SummarySubDataAdapter.xml"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="userEvent" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[userEvent]]></fieldDescription>
+	</field>
+	<field name="titleDesc" class="java.lang.String">
+		<fieldDescription><![CDATA[titleDesc]]></fieldDescription>
+	</field>
+	<field name="lists" class="java.util.List">
+		<fieldDescription><![CDATA[lists]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[name]]></fieldDescription>
+	</field>
+	<field name="titleInfo" class="java.lang.String">
+		<fieldDescription><![CDATA[titleInfo]]></fieldDescription>
+	</field>
+	<field name="title" class="java.lang.String">
+		<fieldDescription><![CDATA[title]]></fieldDescription>
+	</field>
+	<field name="showId" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[showId]]></fieldDescription>
+	</field>
+	<field name="labelShow" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[labelShow]]></fieldDescription>
+	</field>
+	<field name="eventDate" class="java.lang.String">
+		<fieldDescription><![CDATA[eventDate]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="93">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="360" height="90" forecolor="#2BE7ED" backcolor="#DDECF4" uuid="f23fc642-f850-49e6-9aa0-5ea9e61f1a15"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<componentElement>
+					<reportElement x="15" y="26" width="300" height="60" uuid="607bfd61-d997-4c77-9815-91e2820ac4f2">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd">
+						<cvc:itemProperty name="script" value="sumecgdata\SumEcgData.min.js"/>
+						<cvc:itemProperty name="module" value="SumEcgData"/>
+						<cvc:cvData>
+							<dataset/>
+							<cvc:item>
+								<cvc:itemProperty name="list">
+									<valueExpression><![CDATA[$F{lists}]]></valueExpression>
+								</cvc:itemProperty>
+							</cvc:item>
+						</cvc:cvData>
+					</cvc:customvisualization>
+				</componentElement>
+				<staticText>
+					<reportElement x="16" y="15" width="5" height="10" uuid="cb7a823b-71c2-4e54-bc36-e55a8b871b53">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<printWhenExpression><![CDATA[!$F{title}.equals("")]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font fontName="DejaVu Sans" size="7" isBold="false"/>
+					</textElement>
+					<text><![CDATA[▼]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="9" y="1" width="181" height="12" uuid="ebaea67b-3065-4621-b55c-3f7c9d9813ab"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="23" y="14" width="120" height="12" uuid="c464941a-c4fc-45e6-9aa7-13e98e1c974c"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="华文宋体" size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="245" y="13" width="36" height="13" uuid="ca4a0b12-cc3b-480f-84a0-e8f0f4c5462b">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="华文宋体" size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{titleDesc}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="288" y="12" width="27" height="14" uuid="e2d5ce22-b122-4f38-85a1-b9d1bba5ec4d">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{titleInfo}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="319" y="0" width="41" height="90" backcolor="#C9E5F3" uuid="6aafa946-9b03-4ffc-b273-b3aa7baa6e02">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="0.0"/>
+					</graphicElement>
+				</rectangle>
+				<frame>
+					<reportElement x="327" y="71" width="9" height="9" uuid="56d021d2-e1b5-4cee-9ef5-53aee19eb37f">
+						<printWhenExpression><![CDATA[$F{showId}]]></printWhenExpression>
+					</reportElement>
+					<rectangle>
+						<reportElement mode="Transparent" x="0" y="0" width="9" height="9" uuid="59a1e39a-dffb-4d52-9c09-01adc508b7a3">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<graphicElement>
+							<pen lineWidth="0.6"/>
+						</graphicElement>
+					</rectangle>
+					<line>
+						<reportElement x="0" y="0" width="9" height="9" uuid="49eda293-04af-4c9b-a605-51cf12c8c488">
+							<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							<printWhenExpression><![CDATA[$F{userEvent}]]></printWhenExpression>
+						</reportElement>
+						<graphicElement>
+							<pen lineWidth="0.6"/>
+						</graphicElement>
+					</line>
+					<line direction="BottomUp">
+						<reportElement x="0" y="0" width="9" height="9" uuid="3cc23a70-66ea-48a7-b304-3b1668206fd5">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+							<printWhenExpression><![CDATA[$F{userEvent}]]></printWhenExpression>
+						</reportElement>
+						<graphicElement>
+							<pen lineWidth="0.6"/>
+						</graphicElement>
+					</line>
+				</frame>
+				<frame>
+					<reportElement x="342" y="71" width="9" height="9" uuid="66508a12-e376-4527-b3cc-9c8130263597">
+						<printWhenExpression><![CDATA[$F{showId}]]></printWhenExpression>
+					</reportElement>
+					<rectangle>
+						<reportElement mode="Transparent" x="0" y="0" width="9" height="9" uuid="964653e7-da6f-4fa8-bbc7-4496e2e3bfa5">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<graphicElement>
+							<pen lineWidth="0.6"/>
+						</graphicElement>
+					</rectangle>
+					<line>
+						<reportElement x="0" y="0" width="9" height="9" uuid="1e54660e-5890-43aa-a97f-fbe30cd82237">
+							<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							<printWhenExpression><![CDATA[!$F{userEvent}]]></printWhenExpression>
+						</reportElement>
+						<graphicElement>
+							<pen lineWidth="0.6"/>
+						</graphicElement>
+					</line>
+					<line direction="BottomUp">
+						<reportElement x="0" y="0" width="9" height="9" uuid="d613a682-4868-4df5-8eec-06bf6796857a">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+							<printWhenExpression><![CDATA[!$F{userEvent}]]></printWhenExpression>
+						</reportElement>
+						<graphicElement>
+							<pen lineWidth="0.6"/>
+						</graphicElement>
+					</line>
+				</frame>
+				<staticText>
+					<reportElement mode="Transparent" x="327" y="58" width="9" height="9" uuid="122995be-6821-43b7-8101-19e2d8b4d3bb">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<printWhenExpression><![CDATA[$F{showId}]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Justified">
+						<font fontName="华文宋体" size="6"/>
+					</textElement>
+					<text><![CDATA[是]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="342" y="58" width="9" height="9" uuid="4130a07c-48c0-42a5-a5cd-dd366c2d451f">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<printWhenExpression><![CDATA[$F{showId}]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Justified">
+						<font fontName="华文宋体" size="6"/>
+					</textElement>
+					<text><![CDATA[否]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="326" y="30" width="26" height="21" uuid="1eafd005-3e6f-40cf-b869-3210cd322f9e">
+						<printWhenExpression><![CDATA[$F{labelShow}]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Justified">
+						<font fontName="华文宋体" size="7"/>
+					</textElement>
+					<text><![CDATA[用户触发事件]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="143" y="14" width="90" height="12" uuid="c3efb225-e0cb-4a02-bbad-ac7ad36d65ee"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="华文宋体" size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{eventDate}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>

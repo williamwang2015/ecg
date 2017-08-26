@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-08-02T15:13:43 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="others_16" pageWidth="575" pageHeight="842" columnWidth="575" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isFloatColumnFooter="true" uuid="31c5bd3e-7f1a-4ab1-b4e4-a617f592984c">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SvtDataAdapter.xml"/>
+	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="START_PAGE" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="duration" class="java.lang.String">
+		<fieldDescription><![CDATA[duration]]></fieldDescription>
+	</field>
+	<field name="average" class="java.lang.String">
+		<fieldDescription><![CDATA[average]]></fieldDescription>
+	</field>
+	<field name="rateData1" class="java.util.Map">
+		<fieldDescription><![CDATA[rateData1]]></fieldDescription>
+	</field>
+	<field name="dataList" class="java.util.List">
+		<fieldDescription><![CDATA[dataList]]></fieldDescription>
+	</field>
+	<field name="eventTime" class="java.lang.String">
+		<fieldDescription><![CDATA[eventTime]]></fieldDescription>
+	</field>
+	<field name="beats" class="java.lang.String">
+		<fieldDescription><![CDATA[beats]]></fieldDescription>
+	</field>
+	<field name="eventName" class="java.lang.String">
+		<fieldDescription><![CDATA[eventName]]></fieldDescription>
+	</field>
+	<field name="range" class="java.lang.String">
+		<fieldDescription><![CDATA[range]]></fieldDescription>
+	</field>
+	<field name="rateData2" class="java.util.Map">
+		<fieldDescription><![CDATA[rateData2]]></fieldDescription>
+	</field>
+	<field name="eventDate" class="java.lang.String">
+		<fieldDescription><![CDATA[eventDate]]></fieldDescription>
+	</field>
+	<field name="miniSeconds" class="java.lang.Integer">
+		<fieldDescription><![CDATA[miniSeconds]]></fieldDescription>
+	</field>
+	<field name="miniChat" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[miniChat]]></fieldDescription>
+	</field>
+	<field name="seconds" class="java.lang.Integer">
+		<fieldDescription><![CDATA[seconds]]></fieldDescription>
+	</field>
+	<field name="nums" class="java.lang.Integer">
+		<fieldDescription><![CDATA[nums]]></fieldDescription>
+	</field>
+	<field name="index" class="java.lang.Integer">
+		<fieldDescription><![CDATA[index]]></fieldDescription>
+	</field>
+	<field name="ptTrigger" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[ptTrigger]]></fieldDescription>
+	</field>
+	<field name="ptTriggerShow" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[ptTriggerShow]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="232" splitType="Immediate">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<componentElement>
+				<reportElement x="1" y="42" width="573" height="186" isPrintWhenDetailOverflows="true" uuid="ae4bdf8f-435e-44e5-98f8-96703fbde9c0">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd">
+					<cvc:itemProperty name="script" value="ecgdata/ecgdata.min.js"/>
+					<cvc:itemProperty name="module" value="EcgData"/>
+					<cvc:cvData>
+						<dataset/>
+						<cvc:item>
+							<cvc:itemProperty name="list">
+								<valueExpression><![CDATA[$F{dataList}]]></valueExpression>
+							</cvc:itemProperty>
+							<cvc:itemProperty name="miniChatSeconds">
+								<valueExpression><![CDATA[$F{miniSeconds}]]></valueExpression>
+							</cvc:itemProperty>
+							<cvc:itemProperty name="nums">
+								<valueExpression><![CDATA[$F{nums}]]></valueExpression>
+							</cvc:itemProperty>
+							<cvc:itemProperty name="seconds">
+								<valueExpression><![CDATA[$F{seconds}]]></valueExpression>
+							</cvc:itemProperty>
+							<cvc:itemProperty name="miniChat">
+								<valueExpression><![CDATA[$F{miniChat}]]></valueExpression>
+							</cvc:itemProperty>
+						</cvc:item>
+					</cvc:cvData>
+				</cvc:customvisualization>
+			</componentElement>
+			<textField>
+				<reportElement x="45" y="5" width="140" height="14" uuid="8499e962-c162-4221-8618-c2e747870985">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{eventName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="45" y="22" width="60" height="14" uuid="1fdc8194-be79-475f-b942-9b1dc96b2b60">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{eventDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="105" y="22" width="70" height="14" uuid="945c9577-3c1a-4bfb-bc01-3982ac2526aa">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{eventTime}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="21" y="13" width="10" height="18" forecolor="#FFFFFF" uuid="92677c63-bae8-4f3a-9035-6c034faa0d1b">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{index}]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="15" y="11" width="20" height="20" backcolor="#050505" uuid="284fff3c-a5fd-482e-843e-4a283146325a">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+			</ellipse>
+			<textField>
+				<reportElement x="15" y="11" width="20" height="20" forecolor="#FFFFFF" uuid="9bb02bc7-eeb3-4557-a0bd-fec1cfa9576b">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{index}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
