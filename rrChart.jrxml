@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-10-30T11:54:43 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="散点图" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="31c5bd3e-7f1a-4ab1-b4e4-a617f592984c">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="RrLorenzDataAdapter "/>
+	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
+	<subDataset name="HourDataset" uuid="8fe608aa-cdfe-4d13-bb6f-6dad2915ee3c">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="rrDate" class="java.lang.Long">
+			<fieldDescription><![CDATA[rrDate]]></fieldDescription>
+		</field>
+		<field name="rrValue" class="java.lang.Integer">
+			<fieldDescription><![CDATA[rrValue]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="LorenzDataset" uuid="ffe9ec98-8eb2-4797-b8bf-3efa0ca0024c">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="rrDate" class="java.lang.Long">
+			<fieldDescription><![CDATA[rrDate]]></fieldDescription>
+		</field>
+		<field name="rrValue" class="java.lang.Integer">
+			<fieldDescription><![CDATA[rrValue]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="hourSource" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource" isForPrompting="false">
+		<defaultValueExpression><![CDATA[datasource.DataSourceUtil.createHourDataSource()]]></defaultValueExpression>
+	</parameter>
+	<parameter name="lorenzSource" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource" isForPrompting="false">
+		<defaultValueExpression><![CDATA[datasource.DataSourceUtil.createLorenzDataSource()]]></defaultValueExpression>
+	</parameter>
+	<parameter name="START_PAGE" class="java.lang.Integer"/>
+	<parameter name="sn" class="java.lang.String"/>
+	<parameter name="copyright" class="java.lang.String"/>
+	<parameter name="hourUrl" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="rrDate" class="java.lang.Long">
+		<fieldDescription><![CDATA[rrDate]]></fieldDescription>
+	</field>
+	<field name="rrValue" class="java.lang.Double">
+		<fieldDescription><![CDATA[rrValue]]></fieldDescription>
+	</field>
+	<title>
+		<band height="680">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement x="1" y="2" width="134" height="28" uuid="69af078f-cdf8-416a-ae48-03a320d45667">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="黑体" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[散点图]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="40" width="149" height="14" uuid="9c522cf9-4cc8-4dce-b9e0-0e24ebc26308">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<text><![CDATA[时间RR间期散点图]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="57" width="575" height="1" uuid="201a575a-e04c-45b9-b879-6e1061d2d38d">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="380" width="575" height="1" uuid="4de1fc60-207a-4a46-9759-0f42176102d5">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="6" y="363" width="149" height="14" uuid="f8709961-906d-4763-ada0-ce435a37562b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<text><![CDATA[Lorenz-RR散点图]]></text>
+			</staticText>
+			<scatterChart>
+				<chart isShowLegend="false" evaluationTime="Report" customizerClass="com.mypro.report.chart.ScatterChartCustomizer">
+					<reportElement x="0" y="70" width="575" height="280" uuid="40ec7d83-3f95-4ca8-b9e3-ecddb73057a3">
+						<printWhenExpression><![CDATA[$P{hourUrl}==null]]></printWhenExpression>
+					</reportElement>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<xyDataset>
+					<dataset>
+						<datasetRun subDataset="HourDataset" uuid="0d15554d-8ee3-407a-81d8-d3116d2a8874">
+							<dataSourceExpression><![CDATA[$P{hourSource}]]></dataSourceExpression>
+						</datasetRun>
+					</dataset>
+					<xySeries>
+						<seriesExpression><![CDATA["SERIES 1"]]></seriesExpression>
+						<xValueExpression><![CDATA[$F{rrDate}]]></xValueExpression>
+						<yValueExpression><![CDATA[$F{rrValue}]]></yValueExpression>
+					</xySeries>
+				</xyDataset>
+				<scatterPlot isShowLines="false">
+					<plot>
+						<seriesColor seriesOrder="0" color="#56FD74"/>
+					</plot>
+					<xAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</xAxisFormat>
+					<yAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</yAxisFormat>
+					<rangeAxisMinValueExpression><![CDATA[0]]></rangeAxisMinValueExpression>
+					<rangeAxisMaxValueExpression><![CDATA[1500]]></rangeAxisMaxValueExpression>
+				</scatterPlot>
+			</scatterChart>
+			<scatterChart>
+				<chart isShowLegend="false" evaluationTime="Report" customizerClass="com.mypro.report.chart.LorenzScatterChartCustomizer">
+					<reportElement x="1" y="394" width="339" height="280" uuid="2275d9b0-50e3-4cc9-b318-8673e4727aef">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<xyDataset>
+					<dataset>
+						<datasetRun subDataset="LorenzDataset" uuid="66f0bd8f-bf98-49ca-a2b5-ce0e182b0514">
+							<dataSourceExpression><![CDATA[$P{lorenzSource}]]></dataSourceExpression>
+						</datasetRun>
+					</dataset>
+					<xySeries>
+						<seriesExpression><![CDATA["SERIES 1"]]></seriesExpression>
+						<xValueExpression><![CDATA[$F{rrDate}]]></xValueExpression>
+						<yValueExpression><![CDATA[$F{rrValue}]]></yValueExpression>
+					</xySeries>
+				</xyDataset>
+				<scatterPlot isShowLines="false">
+					<plot/>
+					<xAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#050000" axisLineColor="#000000"/>
+					</xAxisFormat>
+					<yAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#030100"/>
+					</yAxisFormat>
+					<rangeAxisMinValueExpression><![CDATA[0]]></rangeAxisMinValueExpression>
+					<rangeAxisMaxValueExpression><![CDATA[2000]]></rangeAxisMaxValueExpression>
+				</scatterPlot>
+			</scatterChart>
+			<image>
+				<reportElement x="0" y="70" width="575" height="280" uuid="6632fb2f-3663-4aec-a786-8314c3b584b3">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$P{hourUrl}!=null]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{hourUrl}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageFooter>
+		<band height="23">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="177" y="9" width="220" height="14" uuid="876f9d8a-12b3-42d2-88f0-36e0c36bcd4c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{copyright}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="491" y="9" width="84" height="14" uuid="7577f74e-eda0-4325-8c1e-9e4575218d55">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+$P{START_PAGE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="9" width="100" height="14" uuid="098ab15d-852a-40e0-be30-a62baad094e2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sn}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

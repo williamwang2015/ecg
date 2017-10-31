@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<beanDataAdapter class="net.sf.jasperreports.data.bean.BeanDataAdapterImpl"><name>VtTestDataAdapter</name><factoryClass>customAdapter.VtFactory</factoryClass><methodName>getCollection</methodName><useFieldDescription>false</useFieldDescription></beanDataAdapter>
