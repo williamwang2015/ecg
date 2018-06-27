@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2017-10-31T08:35:14 -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="房颤" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="31c5bd3e-7f1a-4ab1-b4e4-a617f592984c">
+<!-- 2017-10-31T09:49:13 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="散点图" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="31c5bd3e-7f1a-4ab1-b4e4-a617f592984c">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="rrDataAdapter.xml"/>
-	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
+	<property name="net.sf.jasperreports.print.create.bookmarks" value="true"/>
 	<parameter name="START_PAGE" class="java.lang.Integer"/>
 	<parameter name="sn" class="java.lang.String"/>
 	<parameter name="copyright" class="java.lang.String"/>

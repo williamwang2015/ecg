@@ -15,7 +15,7 @@ define('EcgRate',['Raphael','Triangle'], function (Raphael,Triangle) {
 		var dpi=72;
 		var  UNIT_PIXEL=25.4;
 
-		var marks = [ '用户事件', '室颤/多形性室速/室速/TdP',  '室上速', '停搏', '房颤 %', '房室传导阻滞','房早', '室早','R on T'];
+		var marks = [ '用户事件', '室颤/多形性室速/室速/TdP',  '室上速', '长间歇', '房颤 %', '房室传导阻滞','房早', '室早','R on T'];
 
 		 var chatHeight=85*dpi/UNIT_PIXEL;//高度为85mm
     var chatWidth=200*dpi/UNIT_PIXEL;//宽度为195mm

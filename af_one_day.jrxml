@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2017-08-08T09:44:13 -->
+<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="房颤" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="31c5bd3e-7f1a-4ab1-b4e4-a617f592984c">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="AfDataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="afDataAdapter.xml"/>
 	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
 	<parameter name="START_PAGE" class="java.lang.Integer"/>
 	<parameter name="percent" class="java.lang.String"/>
@@ -92,8 +91,8 @@
 			<componentElement>
 				<reportElement key="" x="15" y="62" width="544" height="172" uuid="e5de589e-a90e-4952-8929-a284041c2ccb"/>
 				<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd" evaluationTime="Page">
-					<cvc:itemProperty name="script" value="ecgafDay/ecgafDay.min.js"/>
-					<cvc:itemProperty name="module" value="EcgAfDay"/>
+					<cvc:itemProperty name="script" value="ecgafDayd3/ecgafDayD3.min.js"/>
+					<cvc:itemProperty name="module" value="ecgAfDayD3"/>
 					<cvc:cvData>
 						<dataset/>
 						<cvc:item>
@@ -151,8 +150,8 @@
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd">
-					<cvc:itemProperty name="script" value="ecgdata/ecgdata.min.js"/>
-					<cvc:itemProperty name="module" value="EcgData"/>
+					<cvc:itemProperty name="script" value="ecgdatad3/ecgDataD3.min.js"/>
+					<cvc:itemProperty name="module" value="ecgDataD3"/>
 					<cvc:cvData>
 						<dataset/>
 						<cvc:item>

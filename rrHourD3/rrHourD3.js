@@ -4,11 +4,12 @@ define(['d3'], function (d3) {
 	var svgWidth =instanceData.width;
     var svgHeight = instanceData.height;
     var padding =  40;
-  
+
     var series0 = instanceData.series[0];
-    
-    var data = series0[0].rrHour;
-     data.filter(function(d) {return d[1] <= 2000});
+
+    var data =series0[series0.length-1].rrHour;
+
+     data=data.filter(function(d) {return d[1] <= 2000});
      var max=d3.max(data, function(d) {return d[0];});
     var min=d3.min(data,function(d){return d[0];});
     var day=((max-min)/1000/3600/24);
@@ -23,7 +24,7 @@ define(['d3'], function (d3) {
             .domain([min, max]).range([padding, svgWidth-10]);
 
     var yScale = d3.scaleLinear()
-            .domain([0, 2000]).range([svgHeight - padding, padding]);
+            .domain([0, 2000]).range([svgHeight - padding, 10]);
 
     svg.selectAll('.circle')
             .data( data )
@@ -53,8 +54,17 @@ define(['d3'], function (d3) {
     svg.append('g').attr('class', 'axis')
             .attr('transform', 'translate(' + padding + ', 0)')
             .call(yAxis);
+            
+    var s = new Date(data[0][0]);
+
+    var format = d3.timeFormat('%Y-%m-%d');
+    var rrDate=format(s);
+   
+    //显示文字
+    var text = svg.append("text").attr("x",svgWidth/2).attr("y",svgHeight-5).attr("font-size",11)
+            .attr("text-anchor", "middle").text(rrDate);
 
 	};
-		
+    	
 });
 

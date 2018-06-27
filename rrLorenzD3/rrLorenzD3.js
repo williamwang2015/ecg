@@ -8,8 +8,8 @@ define(['d3'], function (d3) {
     var series0 = instanceData.series[0];
     
     var data = series0[0].rrLorenz;
-    data.filter(function(d) {return d[1] <= 2000});
-    
+    data=data.filter(function(d) {return d[1] <= 2000});
+    data=data.filter(function(d) {return d[0] <= 2000});
     // generate the dataviz
     var svg = d3.select("#"+instanceData.id)
             .append('svg:svg')

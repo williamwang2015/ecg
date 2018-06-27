@@ -3,7 +3,7 @@ package customAdapter;
 import java.util.List;
 import java.util.Map;
 
-public class VesInfo {
+public class VesInfo extends ReportDetail {
 	private int isolatedNum1;//数量为0不绘制
 	private int isolatedNum2;
 	private int isolatedNum3;
@@ -45,13 +45,6 @@ public class VesInfo {
 	public void setTripletTime(String tripletTime) {
 		this.tripletTime = tripletTime;
 	}
-	private List details;//二联律
-	
-	
-	
-	
-	private Map rateData1;
-	private Map rateData2;
 	
 	
 	public List getIsolated1() {
@@ -84,25 +77,7 @@ public class VesInfo {
 	public void setTriplet(List triplet) {
 		this.triplet = triplet;
 	}
-	public Map getRateData1() {
-		return rateData1;
-	}
-	public void setRateData1(Map rateData1) {
-		this.rateData1 = rateData1;
-	}
-	public Map getRateData2() {
-		return rateData2;
-	}
-	public void setRateData2(Map rateData2) {
-		this.rateData2 = rateData2;
-	}
-
-	public List getDetails() {
-		return details;
-	}
-	public void setDetails(List details) {
-		this.details = details;
-	}
+	
 	public int getIsolatedNum1() {
 		return isolatedNum1;
 	}

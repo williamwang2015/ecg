@@ -18,5 +18,6 @@ public class RrInfo {
 	public void setLorenz(List lorenz) {
 		this.lorenz = lorenz;
 	}
+
 	
 }

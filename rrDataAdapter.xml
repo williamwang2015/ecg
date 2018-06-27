@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<beanDataAdapter class="net.sf.jasperreports.data.bean.BeanDataAdapterImpl"><name>rrDataAdapter</name><factoryClass>customAdapter.RrFactory</factoryClass><methodName>getList</methodName><useFieldDescription>false</useFieldDescription></beanDataAdapter>

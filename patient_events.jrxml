@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2017-08-09T16:13:22 -->
+<!-- 2017-11-20T13:42:23 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="用户记录心电图" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="20" bottomMargin="20" uuid="31c5bd3e-7f1a-4ab1-b4e4-a617f592984c">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PatientEventDataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PeDataAdapter.xml"/>
 	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
 	<parameter name="START_PAGE" class="java.lang.Integer"/>
 	<parameter name="sn" class="java.lang.String"/>
@@ -45,8 +45,8 @@
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd">
-					<cvc:itemProperty name="script" value="patientevent/PatientEvent.min.js"/>
-					<cvc:itemProperty name="module" value="PatientEvent"/>
+					<cvc:itemProperty name="script" value="patientEventD3/patientEventD3.min.js"/>
+					<cvc:itemProperty name="module" value="patientEventD3"/>
 					<cvc:cvData>
 						<dataset resetType="None"/>
 						<cvc:item>

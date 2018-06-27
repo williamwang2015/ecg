@@ -28,6 +28,8 @@ public class SumEcgData {
 	private String sveTriplet;//联发
 	private String sveTripletPercent;
 	private String sveCount;//总数
+	private String sveLvbe;//二联律
+	private String sveLvte;//三联律
 	
 	private String veIsolated;//单发-室性异常
 	private String veIsolatedPercent;
@@ -383,6 +385,18 @@ public class SumEcgData {
 	}
 	public void setConfirmDate(String confirmDate) {
 		this.confirmDate = confirmDate;
+	}
+	public String getSveLvbe() {
+		return sveLvbe;
+	}
+	public void setSveLvbe(String sveLvbe) {
+		this.sveLvbe = sveLvbe;
+	}
+	public String getSveLvte() {
+		return sveLvte;
+	}
+	public void setSveLvte(String sveLvte) {
+		this.sveLvte = sveLvte;
 	}
 	
 

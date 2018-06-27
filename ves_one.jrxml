@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2017-08-10T15:04:53 -->
+<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="室性早搏" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="31c5bd3e-7f1a-4ab1-b4e4-a617f592984c">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="VesDataAdapter.xml"/>
 	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
@@ -117,8 +116,8 @@
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd" evaluationTime="Page">
-					<cvc:itemProperty name="script" value="ectopy/ectopy.min.js"/>
-					<cvc:itemProperty name="module" value="ectopy"/>
+					<cvc:itemProperty name="script" value="ectopyd3/ectopyD3.min.js"/>
+					<cvc:itemProperty name="module" value="ectopyD3"/>
 					<cvc:cvData>
 						<dataset/>
 						<cvc:item>
@@ -163,7 +162,7 @@
 				<textElement>
 					<font fontName="华文宋体" size="9"/>
 				</textElement>
-				<text><![CDATA[二联律时长]]></text>
+				<text><![CDATA[二联律]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="435" y="36" width="50" height="14" uuid="32f4d242-83ac-4302-9567-725f1db79449">
@@ -172,7 +171,7 @@
 				<textElement>
 					<font fontName="华文宋体" size="9"/>
 				</textElement>
-				<text><![CDATA[三联律时长]]></text>
+				<text><![CDATA[三联律]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="358" y="36" width="75" height="14" uuid="25fa0c63-77b9-4258-9a0f-44cff74a79f0">
@@ -204,8 +203,8 @@
 			<componentElement>
 				<reportElement key="" x="3" y="256" width="180" height="132" uuid="43253799-c3e5-4d44-add9-b4980e890ca7"/>
 				<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd" evaluationTime="Page">
-					<cvc:itemProperty name="script" value="IsolatedEcgData/IsolatedEcgData.min.js"/>
-					<cvc:itemProperty name="module" value="IsolatedEcgData"/>
+					<cvc:itemProperty name="script" value="IsolatedEcgDataD3/IsolatedEcgDataD3.min.js"/>
+					<cvc:itemProperty name="module" value="isolatedEcgDataD3"/>
 					<cvc:cvData>
 						<dataset/>
 						<cvc:item>
@@ -222,8 +221,8 @@
 			<componentElement>
 				<reportElement key="" x="197" y="256" width="180" height="132" uuid="68eee5c0-4b95-4c6b-837c-73b43b27b6de"/>
 				<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd" evaluationTime="Page">
-					<cvc:itemProperty name="script" value="IsolatedEcgData/IsolatedEcgData.min.js"/>
-					<cvc:itemProperty name="module" value="IsolatedEcgData"/>
+					<cvc:itemProperty name="script" value="IsolatedEcgDataD3/isolatedEcgDataD3.min.js"/>
+					<cvc:itemProperty name="module" value="isolatedEcgDataD3"/>
 					<cvc:cvData>
 						<dataset/>
 						<cvc:item>
@@ -240,8 +239,8 @@
 			<componentElement>
 				<reportElement key="" x="392" y="256" width="180" height="132" uuid="5989dacd-75ab-4b02-96a2-e61724f75840"/>
 				<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd" evaluationTime="Page">
-					<cvc:itemProperty name="script" value="IsolatedEcgData/IsolatedEcgData.min.js"/>
-					<cvc:itemProperty name="module" value="IsolatedEcgData"/>
+					<cvc:itemProperty name="script" value="IsolatedEcgDataD3/isolatedEcgDataD3.min.js"/>
+					<cvc:itemProperty name="module" value="isolatedEcgDataD3"/>
 					<cvc:cvData>
 						<dataset/>
 						<cvc:item>
@@ -281,8 +280,8 @@
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
 				<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd" evaluationTime="Page">
-					<cvc:itemProperty name="script" value="VeEcgData/VeEcgData.min.js"/>
-					<cvc:itemProperty name="module" value="VeEcgData"/>
+					<cvc:itemProperty name="script" value="VeEcgDataD3/veEcgDataD3.min.js"/>
+					<cvc:itemProperty name="module" value="veEcgDataD3"/>
 					<cvc:cvData>
 						<dataset/>
 						<cvc:item>
@@ -302,8 +301,8 @@
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
 				<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd" evaluationTime="Page">
-					<cvc:itemProperty name="script" value="VeEcgData/VeEcgData.min.js"/>
-					<cvc:itemProperty name="module" value="VeEcgData"/>
+					<cvc:itemProperty name="script" value="veEcgDataD3/VeEcgDataD3.min.js"/>
+					<cvc:itemProperty name="module" value="veEcgDataD3"/>
 					<cvc:cvData>
 						<dataset/>
 						<cvc:item>

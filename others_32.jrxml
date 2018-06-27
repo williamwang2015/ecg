@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2017-08-02T15:14:41 -->
+<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="others_32" pageWidth="575" pageHeight="842" columnWidth="575" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isFloatColumnFooter="true" uuid="31c5bd3e-7f1a-4ab1-b4e4-a617f592984c">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SvtDataAdapter.xml"/>
 	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
@@ -69,8 +68,8 @@
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
 				<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd">
-					<cvc:itemProperty name="script" value="ecgdata/ecgdata.min.js"/>
-					<cvc:itemProperty name="module" value="EcgData"/>
+					<cvc:itemProperty name="script" value="ecgdatad3/ecgdataD3.min.js"/>
+					<cvc:itemProperty name="module" value="ecgDataD3"/>
 					<cvc:cvData>
 						<dataset/>
 						<cvc:item>
@@ -146,6 +145,27 @@
 					<font fontName="华文宋体" size="9" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{eventName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="504" y="5" width="60" height="14" uuid="f862c5e2-578f-414e-afe4-57c143476133">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<printWhenExpression><![CDATA[$F{average}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[平均心率]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="504" y="23" width="60" height="14" isRemoveLineWhenBlank="true" uuid="565203fd-e57a-4c98-a739-7a5fc38f63c4">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<printWhenExpression><![CDATA[$F{average}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{average}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
