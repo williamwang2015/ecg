@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="目录" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="20" bottomMargin="20" uuid="924470a6-a136-4d3a-882b-56832b250e9a">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="IndexDataAdapter.xml"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -94,15 +94,12 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+$P{START_PAGE}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="0" y="14" width="100" height="14" uuid="9d56d0f6-3c7d-444d-8443-7f9c06d044a6">
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<image hAlign="Left" onErrorType="Blank">
+				<reportElement x="0" y="12" width="71" height="16" uuid="1f8b6793-72c5-4d12-bb8f-b74151de073b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="华文宋体" size="9"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{sn}]]></textFieldExpression>
-			</textField>
+				<imageExpression><![CDATA[$P{sn}]]></imageExpression>
+			</image>
 		</band>
 	</pageFooter>
 	<summary>
@@ -121,8 +118,8 @@
 					<font fontName="华文宋体" size="9"/>
 				</textElement>
 				<text><![CDATA[分析标准
-1)室上性早搏提前量：25%
-2)长间歇：2秒
+1)室上性节律提前量：25%
+2)长R-R间期：2秒
 3)心动过速：120次/分钟
 4)心动过缓：50次/分钟
 5)最短过速/缓时间：3分钟

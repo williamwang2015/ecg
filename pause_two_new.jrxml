@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="长间歇" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="31c5bd3e-7f1a-4ab1-b4e4-a617f592984c">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="长R-R间期" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="31c5bd3e-7f1a-4ab1-b4e4-a617f592984c">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PauseDataAdapter.xml"/>
 	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
 	<parameter name="START_PAGE" class="java.lang.Integer"/>
 	<parameter name="nums" class="java.lang.Integer"/>
 	<parameter name="max_pause" class="java.lang.Integer"/>
@@ -33,7 +34,7 @@
 				<textElement>
 					<font fontName="黑体" size="18" isBold="true"/>
 				</textElement>
-				<text><![CDATA[长间歇]]></text>
+				<text><![CDATA[长R-R间期]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="1" y="36" width="34" height="14" uuid="9c522cf9-4cc8-4dce-b9e0-0e24ebc26308">
@@ -166,15 +167,12 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+$P{START_PAGE}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="0" y="4" width="100" height="14" uuid="360f1943-3f6f-46b6-9656-e5fffbf80cad">
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<image hAlign="Left" onErrorType="Blank">
+				<reportElement x="0" y="1" width="71" height="16" uuid="aa02f0e2-a7b8-488b-b400-b796d1afa6e7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="华文宋体" size="9"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{sn}]]></textFieldExpression>
-			</textField>
+				<imageExpression><![CDATA[$P{sn}]]></imageExpression>
+			</image>
 		</band>
 	</pageFooter>
 </jasperReport>

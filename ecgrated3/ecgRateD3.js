@@ -93,7 +93,7 @@ define(['d3','Triangle'], function (d3,Triangle) {
         svg.append("text").attr("x",w-95).attr("y",paddingTop+30).text(rateData.days).attr("font-size",14);
     
         svg.append("text").attr("x",w-95).attr("y",paddingTop+h/10*2+h/20).text("心率统计(每20分钟)").attr('font-size',7).attr('dy',".35em");;
-        svg.append("text").attr("x",w-95).attr("y",paddingTop+h/10*3+h/20).text("最大/最小").attr('font-size',6).attr('dy',".35em");;
+        svg.append("text").attr("x",w-95).attr("y",paddingTop+h/10*3+h/20).text("最快/最慢").attr('font-size',6).attr('dy',".35em");;
        //右边方框
         var  path="M"+(w-58)+','+(paddingTop+h/10*3+5)+'L'+(w-63)+','+(paddingTop+h/10*3+5)+'L'+(w-63)+','+(paddingTop+h/10*4-5)+
                         'L'+(w-58)+','+(paddingTop+h/10*4-5);
@@ -131,7 +131,7 @@ define(['d3','Triangle'], function (d3,Triangle) {
                 .attr("stroke-linecap", "round")
                 .attr("stroke-width", 0.4);
        }
-        var marks = [ '用户事件', '室颤/多形性室速/室速/TdP',  '室上速', '长间歇', '房颤 %', '房室传导阻滞','房早', '室早','R on T'];
+         var marks = [ '用户事件', '室颤/多形性室速/室速/TdP',  '室上速', '长R-R间期', '房颤 %', '传导阻滞','室上性节律', '室性节律','R on T'];
     
         for (var k = 0; k < 9; k++) {
             if (k<=5){

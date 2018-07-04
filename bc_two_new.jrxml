@@ -204,15 +204,12 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+$P{START_PAGE}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="0" y="8" width="100" height="14" uuid="451d3fa3-2d0e-45c7-a6f1-20e296ab84a1">
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<image hAlign="Left" onErrorType="Blank">
+				<reportElement x="0" y="6" width="71" height="16" uuid="be7b87c2-2364-4975-94ad-c6a1ee4245e0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="华文宋体" size="9"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{sn}]]></textFieldExpression>
-			</textField>
+				<imageExpression><![CDATA[$P{sn}]]></imageExpression>
+			</image>
 		</band>
 	</pageFooter>
 </jasperReport>

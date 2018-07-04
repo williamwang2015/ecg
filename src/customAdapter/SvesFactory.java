@@ -39,6 +39,14 @@ public class SvesFactory {
 			
 			lists.add(info);
 		}
+		
+		SvtInfo ecgData=new SvtInfo();
+        ecgData.setIndex(5);
+        ecgData.setEventName(null);
+        ecgData.setEventDate(null);
+        ecgData.setEventTime(null);
+        ecgData.setDuration(null);
+        lists.add(ecgData);
 		detail.setDetails(lists);
 		detail.setRateData1(getRateData());
 		detail.setRateData2(getRateData1());

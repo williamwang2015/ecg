@@ -8,7 +8,7 @@ public class OtherInfoFactory {
 	public static List<OtherInfo> getCollection(){
 		List lists=new ArrayList<OtherInfo>();
 		
-		for (int i=0;i<12;i++){
+		for (int i=0;i<30;i++){
 			OtherInfo otherInfo=new OtherInfo();
 			EcgData info=new EcgData();
 			if (i==0)
@@ -26,7 +26,7 @@ public class OtherInfoFactory {
 			info.setRange("150~171 bpm");
 			info.setNums(1);
 			info.setSeconds(8);
-			info.setMiniChat(false);
+			info.setMiniChat(true);
 			info.setMiniSeconds(30);
 			if (i%2==0){
 			

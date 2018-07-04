@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TOI_Circle_test" pageWidth="575" pageHeight="842" columnWidth="575" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="31c5bd3e-7f1a-4ab1-b4e4-a617f592984c">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SvesDataAdapter.xml"/>
 	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
@@ -8,12 +8,6 @@
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
-	<field name="duration" class="java.lang.String">
-		<fieldDescription><![CDATA[duration]]></fieldDescription>
-	</field>
-	<field name="average" class="java.lang.String">
-		<fieldDescription><![CDATA[average]]></fieldDescription>
-	</field>
 	<field name="dataList" class="java.util.List">
 		<fieldDescription><![CDATA[dataList]]></fieldDescription>
 	</field>
@@ -34,6 +28,12 @@
 	</field>
 	<field name="index" class="java.lang.Integer">
 		<fieldDescription><![CDATA[index]]></fieldDescription>
+	</field>
+	<field name="average" class="java.lang.String">
+		<fieldDescription><![CDATA[average]]></fieldDescription>
+	</field>
+	<field name="duration" class="java.lang.String">
+		<fieldDescription><![CDATA[duration]]></fieldDescription>
 	</field>
 	<detail>
 		<band height="175">
@@ -57,9 +57,10 @@
 				</cvc:customvisualization>
 			</componentElement>
 			<textField>
-				<reportElement x="46" y="10" width="140" height="14" uuid="65139d68-7b5d-4c85-a49a-f6b5be9ff29f">
+				<reportElement x="46" y="10" width="140" height="14" isRemoveLineWhenBlank="true" uuid="65139d68-7b5d-4c85-a49a-f6b5be9ff29f">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{eventName}!=null]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="华文宋体" size="9" isBold="true"/>
@@ -67,8 +68,9 @@
 				<textFieldExpression><![CDATA[$F{eventName}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="46" y="29" width="60" height="14" uuid="08d780f8-78f6-4cb0-86c9-46bfa32dd6e2">
+				<reportElement x="46" y="29" width="60" height="14" isRemoveLineWhenBlank="true" uuid="08d780f8-78f6-4cb0-86c9-46bfa32dd6e2">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{eventDate}!=null]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="华文宋体" size="9" isBold="true"/>
@@ -76,9 +78,10 @@
 				<textFieldExpression><![CDATA[$F{eventDate}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="106" y="29" width="70" height="14" uuid="a369f071-efeb-48cd-97ef-2a42d88e402c">
+				<reportElement x="106" y="29" width="70" height="14" isRemoveLineWhenBlank="true" uuid="a369f071-efeb-48cd-97ef-2a42d88e402c">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{eventTime}!=null]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="华文宋体" size="9"/>

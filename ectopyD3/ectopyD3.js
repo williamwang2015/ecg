@@ -41,7 +41,7 @@ return function (instanceData) {
    svg.selectAll(".text").data(d3.range(0,yUnit*6,yUnit)).enter().append("text").text(function(d){return yUnit*5-d})
             .attr("x", startX-2).attr("y", function(d,i){return startY+chatHeight/5*i}).attr("text-anchor", "end").attr('font-size',7).attr('dy',".35em");
 
-    svg.append("text").text('早搏').attr("x",18).attr("y",startY+48).attr('font-size',7).attr("text-anchor", "middle");
+    svg.append("text").text('节律').attr("x",18).attr("y",startY+48).attr('font-size',7).attr("text-anchor", "middle");
     svg.append("text").text('(次数/小时)').attr("x",18).attr("y",startY+60).attr('font-size',7).attr("text-anchor", "middle");
 
     //数量和百分比标签

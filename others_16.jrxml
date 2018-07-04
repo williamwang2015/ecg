@@ -164,7 +164,7 @@
 				<textElement>
 					<font fontName="华文宋体" size="9" isBold="true"/>
 				</textElement>
-				<text><![CDATA[平均心率]]></text>
+				<text><![CDATA[心率]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
 				<reportElement x="505" y="23" width="60" height="14" isRemoveLineWhenBlank="true" uuid="6c37b489-0055-4a2b-ba8e-2ca36edc9910">

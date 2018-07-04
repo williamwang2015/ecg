@@ -8,7 +8,7 @@ import java.util.Map;
 public class PauseFactory {
 	public static List<ReportDetail> getCollection(){
 		List<SvtInfo> lists=new ArrayList();
-		for (int i=0;i<3;i++){
+		for (int i=0;i<2;i++){
 			SvtInfo info=new SvtInfo();
 			if (i==0)
 				info.setEventName("Longest Pause");
@@ -36,6 +36,13 @@ public class PauseFactory {
 			
 			lists.add(info);
 		}
+		SvtInfo lastInfo=new SvtInfo();
+		lastInfo.setIndex(3);
+		lastInfo.setDuration(null);
+		lastInfo.setEventName(null);
+		lastInfo.setEventDate(null);
+		lastInfo.setEventTime(null);
+		lists.add(lastInfo);
 		ReportDetail detail=new ReportDetail();
 		detail.setDetails(lists);
 		detail.setRateData1(getRateData());

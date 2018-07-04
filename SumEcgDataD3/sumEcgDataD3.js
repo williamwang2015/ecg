@@ -14,10 +14,11 @@ define(['d3'], function (d3) {
     //图表宽度
     var w = 300;
     //高度根据宽度自动计算
-    var h = w / 30 * 6 ;
+    var h = w / 31 * 6 ;
     var duration = 4;//事件持续时间
     // 定义x和y比例尺
-    x = d3.scaleLinear().domain([0, 1500]).range([0, w]),
+    x = d3.scaleLinear().domain([0, 1550]).range([0, w]),
+    cx = d3.scaleLinear().domain([0, 1500]).range([w/31, w]),
     y = d3.scaleLinear().domain([-1.5, 1.5]).range([h, 0]);
 
 
@@ -34,7 +35,7 @@ define(['d3'], function (d3) {
     svg.append("rect").attr("x", 0).attr("y", 0).attr("width", w).attr("height", h).attr("stroke-width", 0.6).attr("fill", "none").attr('stroke', '#000');
     if (ecgDatas!=null){
     //竖线
-    svg.selectAll(".vlines").data(d3.range(29)).enter().append("line").attr("stroke", "#9B9B9B").attr("stroke-width", 0.4)
+    svg.selectAll(".vlines").data(d3.range(30)).enter().append("line").attr("stroke", "#9B9B9B").attr("stroke-width", 0.4)
             .attr("x1", tW).attr("y1", 0)
             .attr("x2", tW).attr("y2", h);
     //横线
@@ -45,7 +46,7 @@ define(['d3'], function (d3) {
 
     var line = d3.line()
             .x(function (d, i) {
-                return x(i);
+                return cx(i);
             })
             .y(function (d) {
                 return y(d);
@@ -60,7 +61,7 @@ define(['d3'], function (d3) {
                 .attr("stroke-width", 0.6);
 
     //刻度标记位置
-    var markerData = [[50, -1.1], [50, -1], [150, -1], [150, -1.1]];
+     var markerData = [[10, 0], [20, 0], [20, 1], [40,1],[40, 0],[50, 0]];
     var markerLine = d3.line()
             .x(function (d) {
                 return x(d[0]);
@@ -72,13 +73,13 @@ define(['d3'], function (d3) {
     var markerPath = svg.append('path')
             .attr('d', markerLine(markerData)).attr("fill", "none")
             .attr("stroke", "#000")
-            .attr("stroke-width", 1);
+            .attr("stroke-width", 0.6);
 
 
     //左侧底部刻度
-    svg.append("text").attr('x', x(100)).attr('y', y(-1.3)).text('400ms').attr('font-size', 5).attr('text-anchor', 'middle');
+    svg.append("text").attr('x', x(50)).attr('y', y(-1.3)).text('25mm/s 10mm/mV').attr('font-size', 5).attr('text-anchor', 'start');
     //右侧底部秒数
-    svg.append("text").attr('x', x(1450)).attr('y', y(-1.3)).text( '6sec').attr('font-size',5).attr('text-anchor', 'end');
+    svg.append("text").attr('x', x(1500)).attr('y', y(-1.3)).text( '6 s').attr('font-size',5).attr('text-anchor', 'end');
     }else{
       
        svg.append("text").attr('x', x(50)).attr('y', y(1)).text( ' 无').attr('font-size',7).attr('text-anchor', 'start');

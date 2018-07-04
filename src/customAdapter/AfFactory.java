@@ -10,17 +10,23 @@ public class AfFactory {
 		List<SvtInfo> lists=new ArrayList();
 		for (int i=0;i<3;i++){
 			SvtInfo info=new SvtInfo();
-			if (i==0)
+			if (i==0){
 				info.setEventName("Longest Pause");
-			if (i==1)
+			    info.setDuration("2 secs");
+			}
+			if (i==1){
 				info.setEventName("Second Longest Pause");
-			if (i==2)
+			    info.setDuration("15 secs");
+			}
+			if (i==2){
 				info.setEventName("Third Longest Pause");
+			    info.setDuration("32 secs");
+			}
 			info.setIndex(i+1);
 			info.setEventDate("11/16/17");
 			info.setEventTime("17:32");
 			info.setBeats((i+2)+"");
-			info.setDuration("2.2 secs");
+			
 			info.setAverage("158 bpm");
 			info.setRange("150~171 bpm");
 			info.setPtTriggerShow(true);

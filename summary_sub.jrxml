@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2017-11-20T10:33:55 -->
+<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="summary_sub" pageWidth="360" pageHeight="550" columnWidth="360" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="f4b4309f-a488-4203-a717-c4e30870a30b">
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
@@ -224,7 +223,9 @@
 					<text><![CDATA[用户触发事件]]></text>
 				</staticText>
 				<textField isBlankWhenNull="true">
-					<reportElement x="143" y="14" width="90" height="12" uuid="c3efb225-e0cb-4a02-bbad-ac7ad36d65ee"/>
+					<reportElement x="143" y="14" width="90" height="12" uuid="c3efb225-e0cb-4a02-bbad-ac7ad36d65ee">
+						<printWhenExpression><![CDATA[1>2]]></printWhenExpression>
+					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font fontName="华文宋体" size="7"/>
 					</textElement>

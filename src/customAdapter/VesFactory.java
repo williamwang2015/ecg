@@ -18,7 +18,43 @@ public class VesFactory {
 		   vesInfo.setCouplet(getList1());
 		   vesInfo.setRateData1(getRateData());
 		   vesInfo.setRateData2(getRateData());
-		   vesInfo.setDetails(SvtInfoFactory.getCollection());
+		   
+		   List<SvtInfo> detailList=new ArrayList();
+			for (int i=0;i<3;i++){
+				SvtInfo info=new SvtInfo();
+				if (i==0){
+					info.setEventName("最快心率");
+				
+				}
+					
+				if (i==1)
+					info.setEventName("最快平均心率");
+				if (i==2)
+					info.setEventName("最长片段");
+				info.setIndex(i+1);
+				info.setEventDate("11/16/17");
+				info.setEventTime("17:32:56");
+			//	info.setBeats((i+2)+"");
+				info.setDuration("12 secs");
+				info.setAverage("158 bpm");
+				info.setRange("150~171 bpm");
+				
+				info.setNums(i+1);
+				info.setSeconds(8);
+				info.setMiniChat(false);
+				info.setMiniSeconds(30);
+				info.setPtTriggerShow(true);
+				if (i%2==0){
+				     info.setPtTrigger(true);
+		        	info.setDataList(getList());
+		        }else{
+		        	info.setDataList(getList1());
+		        	info.setPtTrigger(false);
+		        }
+				
+				detailList.add(info);
+			}
+           vesInfo.setDetails(detailList);
 		   lists.add(vesInfo);
 	   
 	   

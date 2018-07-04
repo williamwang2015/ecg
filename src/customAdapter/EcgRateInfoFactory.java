@@ -9,7 +9,7 @@ public class EcgRateInfoFactory {
 
 	public static List<EcgRateInfo> getCollection() {
 		ArrayList<EcgRateInfo> lists = new ArrayList<EcgRateInfo>();
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 1; i++) {
 			EcgRateInfo info = new EcgRateInfo();
 			if (i==0){
 				info.setBeginIndex(760);
@@ -18,10 +18,10 @@ public class EcgRateInfoFactory {
 				info.setBeginIndex(760);
 			if (i==2)
 				info.setEndIndex(1440);
-			int day = i * 2 + 1;
+			int day = i + 1;
 			info.setDate1("11/" + (16 + i * 2));
 			info.setDate2("11/" + (16 + day));
-			info.setDays("第 " + (i * 2 + 1) + "&" + (day + 1)+" 天");
+			info.setDays("第 " +day+" 天");
 			List events = new ArrayList();
 			events.add(9);
 			events.add(0);
@@ -133,6 +133,19 @@ public class EcgRateInfoFactory {
 			lists.add(info);
 			
 		}
+		EcgRateInfo info=new EcgRateInfo();
+		List events = new ArrayList();
+		events.add(0);
+		events.add(0);
+		events.add(0);
+		events.add(0);
+		events.add(0);
+		events.add(0);
+		events.add("N");
+		events.add("N");
+		events.add("N");
+		info.setEvents(events);
+		lists.add(info);
 		return lists;
 	}
 }

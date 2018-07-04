@@ -36,16 +36,21 @@ public class EcgDataFactory {
 		ecgData.setSveTriplet("12");
 		ecgData.setSveTripletPercent("1%");
 		ecgData.setSveCount("15");
+		ecgData.setSvtCount("13");
+		ecgData.setSvtTime("2018-09-10 12:45:09");
 		
-		ecgData.setVeShow(false);
+		ecgData.setVeShow(true);
 		ecgData.setVeIsolated("66131 (5.7%)");
 		ecgData.setVeCount("20 (0.1%)");
 		ecgData.setVeCouplet("20 (0.1%)");
 		ecgData.setVeTriplet("30 (0.2%)");
-		ecgData.setVeRont("5 (0.2%)");
+		ecgData.setVeRont("5");
+		ecgData.setVeRontPercent("0.1%");
 		ecgData.setVeCount("67123");
 		ecgData.setVeLvbe("01分24秒");
 		ecgData.setVeLvte("01分46秒");
+		ecgData.setVtCount("10");
+		ecgData.setVtTime("2018-09-14 13:09:34");
 		
 		ecgData.setHrvSdnn("143.3");
 		ecgData.setHrvSdnnIndex("135.2");

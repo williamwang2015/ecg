@@ -1,11 +1,12 @@
 define(['d3','Triangle'], function (d3,Triangle) {
 
 	 return function (instanceData) {	
-        var h=220;//
-        var w=567;//
+        var h=280;//
+        var w=575;//
         var paddingTop=10;
         var paddingBottom=10;
         var paddingLeft=22;
+        var eventWidth=108;//右侧事件详细区域宽度
     
         var svgHeight=paddingTop+h+paddingBottom;
         var svg = d3.select("#"+instanceData.id).append("svg").attr("width", w).attr("height", svgHeight);
@@ -17,9 +18,9 @@ define(['d3','Triangle'], function (d3,Triangle) {
         var rateData=series0[length-1];
     
         var xScale = d3.scaleLinear()
-                .domain([0,24*60/20]).range([paddingLeft, w-108]);
+                .domain([0,24*60/20]).range([paddingLeft, w-eventWidth]);
         var xScaleAf = d3.scaleLinear()
-                .domain([0,24*60]).range([paddingLeft, w-108]);
+                .domain([0,24*60]).range([paddingLeft, w-eventWidth]);
         var yScale = d3.scaleLinear()
                 .domain([0, 250]).range([h/2+paddingTop, paddingTop]);
         //画矩形
@@ -35,14 +36,14 @@ define(['d3','Triangle'], function (d3,Triangle) {
         svg.append("line").attr("x1",paddingLeft).attr("y1",paddingTop).attr("x2",paddingLeft).attr("y2",svgHeight).
         attr("stroke-width",0.6).attr("stroke","#000");
         //横线
-        svg.append("line").attr("x1",paddingLeft).attr("y1",paddingTop+h/2).attr("x2",w-108).attr("y2",paddingTop+h/2).
+        svg.append("line").attr("x1",paddingLeft).attr("y1",paddingTop+h/2).attr("x2",w-eventWidth).attr("y2",paddingTop+h/2).
         attr("stroke-width",0.6).attr("stroke","#000");
         svg.append("line").attr("x1",paddingLeft).attr("y1",paddingTop+h/4*3).attr("x2",w).attr("y2",paddingTop+h/4*3).
         attr("stroke-width",0.6).attr("stroke","#000").attr("fill","#000");
     
-        svg.append("line").attr("x1",paddingLeft).attr("y1",paddingTop+h/4*3+h/12).attr("x2",w-108).attr("y2",paddingTop+h/4*3+h/12).
+        svg.append("line").attr("x1",paddingLeft).attr("y1",paddingTop+h/4*3+h/12).attr("x2",w-eventWidth).attr("y2",paddingTop+h/4*3+h/12).
         attr("stroke-width",0.6).attr("stroke","#000").attr("fill","#000").attr("stroke-dasharray","5,5");
-        svg.append("line").attr("x1",paddingLeft).attr("y1",paddingTop+h/4*3+h/12*2).attr("x2",w-108).attr("y2",paddingTop+h/4*3+h/12*2).
+        svg.append("line").attr("x1",paddingLeft).attr("y1",paddingTop+h/4*3+h/12*2).attr("x2",w-eventWidth).attr("y2",paddingTop+h/4*3+h/12*2).
         attr("stroke-width",0.6).attr("stroke","#000").attr("fill","#000").attr("stroke-dasharray","5,5");
         svg.append("line").attr("x1",paddingLeft).attr("y1",paddingTop+h).attr("x2",w).attr("y2",paddingTop+h).
         attr("stroke-width",0.6).attr("stroke","#000").attr("fill","#000");
@@ -91,7 +92,7 @@ define(['d3','Triangle'], function (d3,Triangle) {
         svg.append("text").attr("x",w-95).attr("y",paddingTop+30).text(rateData.days).attr("font-size",14);
     
         svg.append("text").attr("x",w-95).attr("y",paddingTop+h/10*2+h/20).text("心率统计(每20分钟)").attr('font-size',7).attr('dy',".35em");;
-        svg.append("text").attr("x",w-95).attr("y",paddingTop+h/10*3+h/20).text("最大/最小").attr('font-size',6).attr('dy',".35em");;
+        svg.append("text").attr("x",w-95).attr("y",paddingTop+h/10*3+h/20).text("最快/最慢").attr('font-size',6).attr('dy',".35em");;
        //右边方框
         var  path="M"+(w-58)+','+(paddingTop+h/10*3+5)+'L'+(w-63)+','+(paddingTop+h/10*3+5)+'L'+(w-63)+','+(paddingTop+h/10*4-5)+
                         'L'+(w-58)+','+(paddingTop+h/10*4-5);
@@ -129,7 +130,7 @@ define(['d3','Triangle'], function (d3,Triangle) {
                 .attr("stroke-linecap", "round")
                 .attr("stroke-width", 0.4);
        }
-        var marks = [ '用户事件', '室颤/多形性室速/室速/TdP',  '室上速', '长间歇', '房颤 %', '房室传导阻滞','房早', '室早','R on T'];
+        var marks = [ '用户事件', '室颤/多形性室速/室速/TdP',  '室上速', '长R-R间期', '房颤 %', '传导阻滞','室上性节律', '室性节律','R on T'];
     
         for (var k = 0; k < 9; k++) {
             if (k<=5){
@@ -137,13 +138,18 @@ define(['d3','Triangle'], function (d3,Triangle) {
                 var y=paddingTop+h/2+h/4/6*(k)+h/4/12;
                 svg.append("text").attr("x",w-85).attr("y",y).text(marks[k]).attr('font-size',7).attr('dy',".35em");
                 //事件数量
-                svg.append("text").attr("x",w-90).attr("y",y).text(rateData.events[k]).attr('font-size',7).attr('dy',".35em").attr("text-anchor","end");
+               
+                  svg.append("text").attr("x",w-90).attr("y",y).text(rateData.events[k]).attr('font-size',7).attr('dy',".35em").attr("text-anchor","end");
+                 
+              
     
             }else{
                 var y=paddingTop+h*3/4+h/24+h/12*(k-6);
                 svg.append("text").attr("x",w-85).attr("y",y).text(marks[k]).attr('font-size',7).attr('dy',".35em");
                 //事件数量
+                 
                 svg.append("text").attr("x",w-90).attr("y",y).text(rateData.events[k]).attr('font-size',7).attr('dy',".35em").attr("text-anchor","end");
+               
     
             }
     
@@ -163,6 +169,7 @@ define(['d3','Triangle'], function (d3,Triangle) {
         //事件信息
        // var eventList=[{eventIndex:4,datas:[2,8,10]},{eventIndex:5,datas:[{start:120,end:130},{start:72,end:78}]},{eventIndex:6,datas:[20,24]},{eventIndex:7,datas:[{index:46,value:50}]}];
         var eventList=rateData.eventList;
+        if (eventList!=null){
         for (var m = 0; m < eventList.length; m++) {
             var event = eventList[m];
     
@@ -200,6 +207,7 @@ define(['d3','Triangle'], function (d3,Triangle) {
                 
                 }
     
+            }
             }
         }
 

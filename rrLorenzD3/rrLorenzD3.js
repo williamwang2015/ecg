@@ -17,7 +17,7 @@ define(['d3'], function (d3) {
             .attr('height', svgHeight);
 
     var xScale = d3.scaleLinear()
-            .domain([0, 2000]).range([padding, svgWidth-10]);
+            .domain([0, 2000]).range([padding, svgWidth-40]);
 
     var yScale = d3.scaleLinear()
             .domain([0, 2000]).range([svgHeight - padding, padding]);

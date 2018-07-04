@@ -27,6 +27,8 @@ public class SumEcgData {
 	private String sveCoupletPercent;
 	private String sveTriplet;//联发
 	private String sveTripletPercent;
+	private String svtCount;
+	private String svtTime;
 	private String sveCount;//总数
 	private String sveLvbe;//二联律
 	private String sveLvte;//三联律
@@ -43,6 +45,9 @@ public class SumEcgData {
 	private String veCount;//总数
 	private String veLvbe;//二联律
 	private String veLvte;//三联律
+	private String vtCount;
+	private String vtTime;
+	
 	
 	private String hrvSdnn;
 	private String hrvSdnnIndex;
@@ -397,6 +402,30 @@ public class SumEcgData {
 	}
 	public void setSveLvte(String sveLvte) {
 		this.sveLvte = sveLvte;
+	}
+	public String getSvtCount() {
+		return svtCount;
+	}
+	public void setSvtCount(String svtCount) {
+		this.svtCount = svtCount;
+	}
+	public String getSvtTime() {
+		return svtTime;
+	}
+	public void setSvtTime(String svtTime) {
+		this.svtTime = svtTime;
+	}
+	public String getVtCount() {
+		return vtCount;
+	}
+	public void setVtCount(String vtCount) {
+		this.vtCount = vtCount;
+	}
+	public String getVtTime() {
+		return vtTime;
+	}
+	public void setVtTime(String vtTime) {
+		this.vtTime = vtTime;
 	}
 	
 
