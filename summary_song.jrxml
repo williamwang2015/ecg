@@ -8,6 +8,12 @@
 			<style isBold="true"/>
 		</conditionalStyle>
 	</style>
+	<style name="res" fontName="华文宋体" fontSize="9">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{result}.length()>350]]></conditionExpression>
+			<style fontSize="8"/>
+		</conditionalStyle>
+	</style>
 	<parameter name="sn" class="java.lang.String"/>
 	<parameter name="copyright" class="java.lang.String"/>
 	<parameter name="title" class="java.lang.String"/>
@@ -19,6 +25,9 @@
 	<parameter name="doctorTitle" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="reportNo" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="doctorAdvice" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="isSign" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[true]]></defaultValueExpression>
+	</parameter>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -466,9 +475,9 @@
 				<textFieldExpression><![CDATA[$F{analysisTimes}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="3" y="582" width="278" height="149" uuid="0314ef68-8934-4c8b-aa46-84ebfc87c405"/>
+				<reportElement style="res" x="3" y="582" width="278" height="149" uuid="0314ef68-8934-4c8b-aa46-84ebfc87c405"/>
 				<textElement>
-					<font fontName="华文宋体" size="9"/>
+					<font isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{result}]]></textFieldExpression>
 			</textField>
@@ -669,7 +678,7 @@
 				</textField>
 				<image hAlign="Right" onErrorType="Blank">
 					<reportElement x="114" y="154" width="71" height="15" uuid="8bc53727-364f-4777-9df2-5c5ba4a51e6e">
-						<printWhenExpression><![CDATA[$F{signUrl}!=null]]></printWhenExpression>
+						<printWhenExpression><![CDATA[$F{signUrl}!=null && $P{isSign}]]></printWhenExpression>
 					</reportElement>
 					<imageExpression><![CDATA[$F{signUrl}]]></imageExpression>
 				</image>
@@ -692,7 +701,7 @@
 				<textField isBlankWhenNull="true">
 					<reportElement x="111" y="155" width="69" height="15" uuid="42f1ba27-132d-49dd-bac0-5a88f05cb284">
 						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
-						<printWhenExpression><![CDATA[$F{signUrl}==null]]></printWhenExpression>
+						<printWhenExpression><![CDATA[$F{signUrl}==null&&$P{isSign}]]></printWhenExpression>
 					</reportElement>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -713,7 +722,9 @@
 					<textFieldExpression><![CDATA[$P{doctorAdvice}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="85" y="157" width="30" height="15" uuid="84632a64-ebec-42bd-b910-8bd12189144a"/>
+					<reportElement x="85" y="157" width="30" height="15" uuid="84632a64-ebec-42bd-b910-8bd12189144a">
+						<printWhenExpression><![CDATA[$P{isSign}]]></printWhenExpression>
+					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font fontName="华文宋体" size="9"/>
 					</textElement>
@@ -722,6 +733,7 @@
 				<textField isBlankWhenNull="true">
 					<reportElement x="112" y="156" width="69" height="15" uuid="ef61326f-3ea6-494d-923a-8d50d64bc2a3">
 						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<printWhenExpression><![CDATA[$P{isSign}]]></printWhenExpression>
 					</reportElement>
 					<box>
 						<bottomPen lineWidth="0.5"/>
