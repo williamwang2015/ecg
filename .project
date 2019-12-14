@@ -32,4 +32,11 @@
 		<nature>net.sf.jasperreports.nature</nature>
 		<nature>com.jaspersoft.studio.babel.editor.rbeNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>footer.jssce</name>
+			<type>1</type>
+			<location>C:/Users/Administrator/JaspersoftWorkspace/.metadata/.plugins/com.jaspersoft.studio/compositeElements/footer.jssce</location>
+		</link>
+	</linkedResources>
 </projectDescription>

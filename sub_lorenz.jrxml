@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TOI_Circle_test" pageWidth="575" pageHeight="842" columnWidth="575" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="31c5bd3e-7f1a-4ab1-b4e4-a617f592984c">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="lorenz_da_new.xml"/>
+	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="day" class="java.lang.String">
+		<fieldDescription><![CDATA[day]]></fieldDescription>
+	</field>
+	<field name="rrInfo" class="java.util.List">
+		<fieldDescription><![CDATA[rrInfo]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="341">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="110" y="305" width="70" height="20" uuid="2a68b7f0-f93f-478f-8aeb-fbca4faf9c8b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{day}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="300" width="100" height="30" uuid="3d2269b8-d5bb-4b4e-87a8-4f4c7669840c"/>
+				<textFieldExpression><![CDATA[$F{rrInfo}.size()]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="1" y="0" width="279" height="260" isPrintWhenDetailOverflows="true" uuid="4b80af20-1ecc-4a0f-9b8b-1b03b7c4c98b">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd">
+					<cvc:itemProperty name="script" value="anaLorenz/anaLorenz.min.js"/>
+					<cvc:itemProperty name="module" value="anaLorenz"/>
+					<cvc:cvData>
+						<dataset/>
+						<cvc:item>
+							<cvc:itemProperty name="lorenz">
+								<valueExpression><![CDATA[$F{rrInfo}]]></valueExpression>
+							</cvc:itemProperty>
+						</cvc:item>
+					</cvc:cvData>
+				</cvc:customvisualization>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>

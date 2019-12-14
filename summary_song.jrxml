@@ -277,6 +277,7 @@
 			<staticText>
 				<reportElement x="120" y="46" width="40" height="14" uuid="485415ac-0a89-40f0-8677-2f2e40ffd020">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{indication}!=null]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Left">
 					<font fontName="华文宋体" size="9" isBold="true"/>

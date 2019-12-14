@@ -7,7 +7,9 @@ define(['d3'], function (d3) {
   
     var series0 = instanceData.series[0];
     
-    var data = series0[0].rrLorenz;
+    var data = series0[series0.length-1].lorenz;
+    console.log(">>>"+instanceData.id);
+    console.log(data);
     data=data.filter(function(d) {return d[1] <= 2000});
     data=data.filter(function(d) {return d[0] <= 2000});
     // generate the dataviz
@@ -17,7 +19,7 @@ define(['d3'], function (d3) {
             .attr('height', svgHeight);
 
     var xScale = d3.scaleLinear()
-            .domain([0, 2000]).range([padding, svgWidth-40]);
+            .domain([0, 2000]).range([padding, svgWidth-padding]);
 
     var yScale = d3.scaleLinear()
             .domain([0, 2000]).range([svgHeight - padding, padding]);
@@ -54,5 +56,4 @@ define(['d3'], function (d3) {
 	};
 		
 });
-
 

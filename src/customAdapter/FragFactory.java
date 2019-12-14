@@ -1,23 +1,14 @@
 package customAdapter;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class SvtInfoFactory {
-	public static List<ReportDetail> getCollection(){
-		List<ReportDetail> details=new ArrayList();
-		ReportDetail detail=new ReportDetail();
-		
+public class FragFactory {
+	public static List getCollection(){
 		List<SvtInfo> lists=new ArrayList();
 		for (int i=0;i<3;i++){
 			SvtInfo info=new SvtInfo();
-			if (i==0){
-				info.setEventName("最快心率");
-				info.setRateData1(getRateData());
-				info.setRateData2(getRateData1());
-			}
+			
 				
 			if (i==1)
 				info.setEventName("最快平均心率");
@@ -46,12 +37,9 @@ public class SvtInfoFactory {
 			
 			lists.add(info);
 		}
-		detail.setDetails(lists);
-		detail.setRateData1(getRateData1());
-		detail.setRateData2(getRateData());
-		details.add(detail);
-		return details;
+		return lists;
 	}
+	
 	
 	
 	public static List getList(){
@@ -77,57 +65,5 @@ public class SvtInfoFactory {
 	    	list.add(datas[i]);
 	    }
 	    return list;
-	}
-	
-	
-	public static Map getRateData(){
-		Map map=new HashMap();
-		List datas=new ArrayList();
-		for (int i=0;i<8;i++){
-			datas.add("11/1"+(i));
-			
-		}
-		map.put("dates", datas);
-		List rates=new ArrayList();
-		for (int j=0;j<3;j++){
-			RateData rate=new RateData();
-			rate.setRateIndex(60+j*60);
-			rate.setMax(130);
-			rate.setMin(40);
-			rate.setAvg(80);
-			rate.setDay(j);
-			rates.add(rate);
-		}
-		map.put("rateList", rates);
-		
-//		map.put("beginIndex",720);
-//		map.put("endIndex", 8640);//每个表格的分钟索引
-		return map;
-		
-	}
-	public static Map getRateData1(){
-		Map map=new HashMap();
-		List datas=new ArrayList();
-		for (int i=0;i<8;i++){
-			datas.add("10/1"+(i));
-			
-		}
-		map.put("dates", datas);
-		List rates=new ArrayList();
-		for (int j=0;j<2;j++){
-			RateData rate=new RateData();
-			rate.setRateIndex(480+j*10);
-			rate.setMax(260);
-			rate.setMin(40);
-			rate.setAvg(80);
-			rate.setDay(j);
-			rates.add(rate);
-		}
-		map.put("rateList", rates);
-		
-//		map.put("beginIndex",40);
-//		map.put("endIndex", 8640);//每个表格的分钟索引
-		return map;
-		
 	}
 }
