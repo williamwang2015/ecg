@@ -5,6 +5,7 @@ import java.util.Map;
 
 public class SvtInfo {
 	private List dataList;
+	private List annoList;//标注列表
 	private String eventDate;
 	private String eventName;
 	private String eventTime;
@@ -23,7 +24,7 @@ public class SvtInfo {
 	private Boolean ptTrigger;
 	private int index;
 	
-	
+	private Boolean markLine=true; //是否话标志线
 	
 	public Map getRateData1() {
 		return rateData1;
@@ -127,6 +128,18 @@ public class SvtInfo {
 	}
 	public void setIndex(int index) {
 		this.index = index;
+	}
+	public List getAnnoList() {
+		return annoList;
+	}
+	public void setAnnoList(List annoList) {
+		this.annoList = annoList;
+	}
+	public Boolean getMarkLine() {
+		return markLine;
+	}
+	public void setMarkLine(Boolean markLine) {
+		this.markLine = markLine;
 	}
 	
 	

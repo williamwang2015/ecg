@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="房颤" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="31c5bd3e-7f1a-4ab1-b4e4-a617f592984c">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="afDataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="AfDataAdapter.xml"/>
 	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
 	<parameter name="START_PAGE" class="java.lang.Integer"/>
 	<parameter name="percent" class="java.lang.String"/>
@@ -9,6 +9,9 @@
 	<parameter name="average" class="java.lang.Integer"/>
 	<parameter name="sn" class="java.lang.String"/>
 	<parameter name="copyright" class="java.lang.String"/>
+	<parameter name="fragStyle" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
+	</parameter>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -22,10 +25,10 @@
 		<fieldDescription><![CDATA[rateData2]]></fieldDescription>
 	</field>
 	<title>
-		<band height="237">
+		<band height="218">
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<staticText>
-				<reportElement x="1" y="2" width="134" height="28" uuid="69af078f-cdf8-416a-ae48-03a320d45667">
+				<reportElement x="1" y="2" width="134" height="30" uuid="69af078f-cdf8-416a-ae48-03a320d45667">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 				</reportElement>
@@ -35,7 +38,7 @@
 				<text><![CDATA[房 颤]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="1" y="36" width="34" height="14" uuid="9c522cf9-4cc8-4dce-b9e0-0e24ebc26308">
+				<reportElement x="1" y="32" width="34" height="14" uuid="9c522cf9-4cc8-4dce-b9e0-0e24ebc26308">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 				</reportElement>
@@ -45,7 +48,7 @@
 				<text><![CDATA[百分比]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="190" y="36" width="52" height="14" uuid="01c7d599-e14f-453d-89a3-6dd9f698d807">
+				<reportElement x="190" y="32" width="52" height="14" uuid="01c7d599-e14f-453d-89a3-6dd9f698d807">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement>
@@ -54,12 +57,12 @@
 				<text><![CDATA[心率范围]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="57" width="575" height="1" uuid="201a575a-e04c-45b9-b879-6e1061d2d38d">
+				<reportElement x="0" y="48" width="575" height="1" uuid="201a575a-e04c-45b9-b879-6e1061d2d38d">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
 			</line>
 			<componentElement>
-				<reportElement key="" x="15" y="62" width="544" height="172" uuid="e5de589e-a90e-4952-8929-a284041c2ccb"/>
+				<reportElement key="" x="15" y="51" width="544" height="167" uuid="e5de589e-a90e-4952-8929-a284041c2ccb"/>
 				<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd" evaluationTime="Page">
 					<cvc:itemProperty name="script" value="ecgafDayd3/ecgafDayD3.min.js"/>
 					<cvc:itemProperty name="module" value="ecgAfDayD3"/>
@@ -74,7 +77,7 @@
 				</cvc:customvisualization>
 			</componentElement>
 			<textField>
-				<reportElement x="51" y="36" width="59" height="14" uuid="5d3ded68-901b-46b0-b73e-c4ffe3bb5584">
+				<reportElement x="51" y="32" width="59" height="14" uuid="5d3ded68-901b-46b0-b73e-c4ffe3bb5584">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement verticalAlignment="Top">
@@ -83,7 +86,7 @@
 				<textFieldExpression><![CDATA[$P{percent}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="250" y="36" width="100" height="14" uuid="7940db46-ee42-40af-845d-b96a87ce09e7">
+				<reportElement x="250" y="32" width="100" height="14" uuid="7940db46-ee42-40af-845d-b96a87ce09e7">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement verticalAlignment="Top">
@@ -92,7 +95,7 @@
 				<textFieldExpression><![CDATA[$P{range}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="380" y="36" width="52" height="14" uuid="f3f0b034-82f1-428f-b22b-72ed95b8d10f">
+				<reportElement x="380" y="32" width="52" height="14" uuid="f3f0b034-82f1-428f-b22b-72ed95b8d10f">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement>
@@ -101,7 +104,7 @@
 				<text><![CDATA[平均心率]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="440" y="36" width="100" height="14" uuid="f52aed7d-55c2-4380-88cf-28a317e794ab">
+				<reportElement x="440" y="32" width="100" height="14" uuid="f52aed7d-55c2-4380-88cf-28a317e794ab">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement verticalAlignment="Top">
@@ -112,7 +115,7 @@
 		</band>
 	</title>
 	<detail>
-		<band height="34" splitType="Immediate">
+		<band height="27" splitType="Immediate">
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<subreport>
 				<reportElement mode="Transparent" x="1" y="1" width="570" height="25" uuid="722545e1-22f6-43c6-9515-54121b819e25">
@@ -122,12 +125,12 @@
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{details} )]]></dataSourceExpression>
-				<subreportExpression><![CDATA["bc_rate.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[($P{fragStyle}.intValue()==1) ? "bc_rate.jasper ":"bc_rate30.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>
 	<pageFooter>
-		<band height="22">
+		<band height="20">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField>
 				<reportElement x="177" y="2" width="220" height="14" uuid="3e3a5d60-bfba-4ecb-9446-279a66cda28a">
@@ -147,12 +150,15 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+$P{START_PAGE}]]></textFieldExpression>
 			</textField>
-			<image hAlign="Left" onErrorType="Blank">
-				<reportElement x="0" y="0" width="71" height="16" uuid="06283c64-dd49-4e4c-8a98-d7ba86aa134a">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="4" y="2" width="84" height="14" uuid="7a7936e6-b452-4115-b6c1-b91166dd5242">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-				<imageExpression><![CDATA[$P{sn}]]></imageExpression>
-			</image>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sn}]]></textFieldExpression>
+			</textField>
 		</band>
 	</pageFooter>
 </jasperReport>

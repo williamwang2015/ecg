@@ -109,12 +109,15 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+$P{START_PAGE}]]></textFieldExpression>
 			</textField>
-			<image hAlign="Left" onErrorType="Blank">
-				<reportElement x="0" y="12" width="71" height="16" uuid="1f8b6793-72c5-4d12-bb8f-b74151de073b">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="4" y="14" width="84" height="14" uuid="ff3bff2e-b67b-494c-85cd-95d80403b80a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-				<imageExpression><![CDATA[$P{sn}]]></imageExpression>
-			</image>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sn}]]></textFieldExpression>
+			</textField>
 		</band>
 	</pageFooter>
 	<summary>

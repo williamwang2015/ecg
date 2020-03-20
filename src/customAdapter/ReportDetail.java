@@ -11,6 +11,20 @@ public class ReportDetail {
 	//报告上方的图表信息2
 	private Map rateData2;
 	
+	private List hrtList;
+	
+	private int offset; 
+	
+    private List avgList;
+	
+	private int avgStart;
+	
+	//y轴范围
+	private int minRr;
+	private int maxRr;
+	
+	
+	
 	
 	public List getDetails() {
 		return details;
@@ -30,6 +44,43 @@ public class ReportDetail {
 	public void setRateData2(Map rateData2) {
 		this.rateData2 = rateData2;
 	}
+	public List getHrtList() {
+		return hrtList;
+	}
+	public void setHrtList(List hrtList) {
+		this.hrtList = hrtList;
+	}
+	public int getOffset() {
+		return offset;
+	}
+	public void setOffset(int offset) {
+		this.offset = offset;
+	}
+	public List getAvgList() {
+		return avgList;
+	}
+	public void setAvgList(List avgList) {
+		this.avgList = avgList;
+	}
+	public int getAvgStart() {
+		return avgStart;
+	}
+	public void setAvgStart(int avgStart) {
+		this.avgStart = avgStart;
+	}
+	public int getMinRr() {
+		return minRr;
+	}
+	public void setMinRr(int minRr) {
+		this.minRr = minRr;
+	}
+	public int getMaxRr() {
+		return maxRr;
+	}
+	public void setMaxRr(int maxRr) {
+		this.maxRr = maxRr;
+	}
+	
 	
 	
 

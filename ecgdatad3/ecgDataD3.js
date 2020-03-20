@@ -9,11 +9,40 @@ define(['d3','Triangle'], function (d3,Triangle) {
    var series=instanceData.series[0];
    
    var datas=series[series.length-1];
-     
+   
+   var annos=datas.annos;//标注信息  
+   
+   var markLine=datas.markLine;//画标志线标志
+   //未定义则画
+   if (markLine==undefined)
+       markLine=true;
+       
    var ecgDatas = [];
    //处理越界数据
   
    var duration=datas.duration;
+   
+   //根据间期转换秒数
+   var sec=0;
+  if (duration!=null){
+  	 duration=duration.replace(/\s+/g,"");
+    if (duration.indexOf('h')!=-1){
+
+        var h=parseInt(duration.substr(0,2));
+        var m=parseInt(duration.substr(3,2));
+        var s=parseInt(duration.substr(6,2));
+        sec=h*3600+m*60+s;
+    }else if (duration.indexOf('m')!=-1)
+    {
+        var m=parseInt(duration.substr(0,2));
+        var s=parseInt(duration.substr(3,2));
+      	sec=m*60+s;
+    }else{
+    	var secStr=duration.replace('s','').trim();
+        sec=parseFloat(secStr);
+    }
+    
+  } 
   
    var nums=1;
    if (datas.nums!=null)
@@ -140,11 +169,11 @@ define(['d3','Triangle'], function (d3,Triangle) {
                 .attr("stroke-linecap", "round")
                 .attr("stroke-width", 0.6);
 
-        if (num == 0 ) {
+        if (num == 0&&markLine ) {
              
              if (duration!=null){
-             var secStr=duration.replace('secs','').trim();
-             var sec=parseFloat(secStr);
+             
+            
              if (sec < seconds){
                 //大图画标志线
             var beginX =w/41+ (seconds - sec) / 2 * ((w/41*40) / seconds);
@@ -174,6 +203,7 @@ define(['d3','Triangle'], function (d3,Triangle) {
                 
                 
                 }}else{//没有事件秒数画中心线
+               
                    var beginX=w/41+seconds/2*((w/41*40)/seconds);
                    svg.append('path')
                     .attr('d', Triangle.getPath(beginX, 5)).attr("fill", "#0080ff")
@@ -185,6 +215,7 @@ define(['d3','Triangle'], function (d3,Triangle) {
                  svg.append("line").attr("stroke", "#0080ff").attr("stroke-width", 0.4)
                     .attr("x1", beginX).attr("y1", 5)
                     .attr("x2", beginX).attr("y2", h);
+                
                 }
              
              
@@ -210,9 +241,9 @@ define(['d3','Triangle'], function (d3,Triangle) {
 
 
     //左侧底部刻度
-     svg.append("text").attr('x', x(50)).attr('y', y(3 * nums - 0.3)).text('25mm/s 10mm/mV').attr('font-size', 6).attr('text-anchor', 'start');
+     svg.append("text").attr('x', x(50)).attr('y', y(3 * nums - 0.1)).text('25mm/s 10mm/mV').attr('font-size', 6).attr('text-anchor', 'start');
      //右侧底部秒数
-    svg.append("text").attr('x', x(2000)).attr('y', y(3 * nums - 0.3)).text(nums * seconds + ' s').attr('font-size', 6).attr('text-anchor', 'end');
+    svg.append("text").attr('x', x(2000)).attr('y', y(3 * nums - 0.1)).text(nums * seconds + ' s').attr('font-size', 6).attr('text-anchor', 'end');
 
 
     if (nums == 1&&miniChat) {
@@ -254,8 +285,8 @@ define(['d3','Triangle'], function (d3,Triangle) {
                 .attr("stroke", "#000")
                 .attr("stroke-width", 0.4);
 
-        if (duration!=null){
-         var sec=parseFloat(duration.replace('secs','').trim());
+        if (duration!=null&&markLine){
+        
         if (sec >= seconds && sec < miniChatSeconds) {
 
             //底部小图标识持续时长
@@ -297,6 +328,56 @@ define(['d3','Triangle'], function (d3,Triangle) {
         }
         }
     }
+    //画标注
+    
+    if (num==1 && annos!=null){
+    	var anno=[];
+    	for(j = 0,len=annos.length; j < len; j++) {
+    	    if (annos[j][0]>4750) break;
+          	if (annos[j][0]>=2750 && annos[j][0]<4750)//11~19秒之间
+          	    anno.push(annos[j]);
+          	    
+         }
+      
+   svg.selectAll('.text').data(anno).enter().append('text').attr("x",function(d,i){
+       return  cx(d[0]-2750);
+    }).attr("y",6).text(function(d){
+        return d[1];
+    }).attr('font-size', 6).attr('text-anchor', 'middle');
+    //rr 间期和心率
+    svg.selectAll('.text').data(anno).enter().append('text').attr("x",function(d,i){
+        if (d[2]>0){
+        if (i>0){
+            return cx((d[0]-anno[i-1][0])/2+anno[i-1][0]-2750);
+        }else{
+            return cx((d[0]-2750)/2);
+        }
+        }
+        return  0;
+        
+    }).attr("y",6).text(function(d,i){
+         if (d[2]>0&&i>0) return  d[2];
+    }).attr('font-size', 6).attr('text-anchor', 'middle');
+    
+    svg.selectAll('.text').data(anno).enter().append('text').attr("x",function(d,i){
+        if (d[2]>0){
+        if (i>0){
+            return cx((d[0]-anno[i-1][0])/2+anno[i-1][0]-2750);
+        }else{
+        
+            return cx((d[0]-2750)/2);
+        }
+        }
+        return  0;
+    }).attr("y",12).text(function(d,i){
+         if (d[3]>0&&i>0) return  d[3];
+    }).attr('font-size', 6).attr('text-anchor', 'middle');
+    
+    
+    }
+       
+    
+    
 }else{
     //没有数据画一个框
     svg.append("rect").attr("x", 0).attr("y", 0).attr("width", w).attr("height", h+5+minH).attr("stroke-width", 0.6).attr("fill", "none").attr('stroke', '#000');

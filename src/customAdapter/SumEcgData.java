@@ -58,9 +58,20 @@ public class SumEcgData {
 	private String hrvLf;
 	private String hrvVlf;
 	
+	private String hospitalNo;//住院号
+	private String bedNo;//床号
+	
 	private String confirmDate;
 	private String signUrl;
 	private String confirmDoctor;
+	
+	private String afBeats;
+	private String afPercent;
+	private String afTimes;
+	private String afNums;
+	private String afLongestTimes;
+	private String afMaxRate;
+	
 	public String getConfirmDoctor() {
 		return confirmDoctor;
 	}
@@ -89,7 +100,7 @@ public class SumEcgData {
 
 	private Boolean veShow;
 	private Boolean sveShow;
-	
+	private Boolean afShow;
 	
 	public String getMaxRateTime() {
 		return maxRateTime;
@@ -426,6 +437,60 @@ public class SumEcgData {
 	}
 	public void setVtTime(String vtTime) {
 		this.vtTime = vtTime;
+	}
+	public String getHospitalNo() {
+		return hospitalNo;
+	}
+	public void setHospitalNo(String hospitalNo) {
+		this.hospitalNo = hospitalNo;
+	}
+	public String getBedNo() {
+		return bedNo;
+	}
+	public void setBedNo(String bedNo) {
+		this.bedNo = bedNo;
+	}
+	public String getAfBeats() {
+		return afBeats;
+	}
+	public void setAfBeats(String afBeats) {
+		this.afBeats = afBeats;
+	}
+	public String getAfPercent() {
+		return afPercent;
+	}
+	public void setAfPercent(String afPercent) {
+		this.afPercent = afPercent;
+	}
+	public String getAfTimes() {
+		return afTimes;
+	}
+	public void setAfTimes(String afTimes) {
+		this.afTimes = afTimes;
+	}
+	public String getAfNums() {
+		return afNums;
+	}
+	public void setAfNums(String afNums) {
+		this.afNums = afNums;
+	}
+	public String getAfLongestTimes() {
+		return afLongestTimes;
+	}
+	public void setAfLongestTimes(String afLongestTimes) {
+		this.afLongestTimes = afLongestTimes;
+	}
+	public String getAfMaxRate() {
+		return afMaxRate;
+	}
+	public void setAfMaxRate(String afMaxRate) {
+		this.afMaxRate = afMaxRate;
+	}
+	public Boolean getAfShow() {
+		return afShow;
+	}
+	public void setAfShow(Boolean afShow) {
+		this.afShow = afShow;
 	}
 	
 

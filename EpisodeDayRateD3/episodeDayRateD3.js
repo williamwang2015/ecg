@@ -5,8 +5,8 @@ define(['d3','Triangle'], function (d3,Triangle) {
      
     var rateData=series[0].list;
       
-   	
-    
+   	var isAvgRate=series[0].avg|0;//1 only avg
+   
     var chatHeight=120;
     var chatWidth=432;
     var startX=45;
@@ -67,13 +67,18 @@ define(['d3','Triangle'], function (d3,Triangle) {
 
 
     var rateList=rateData.rateList;
+    if (isAvgRate!=null&&isAvgRate==1)
+    {
+      svg.selectAll(".circle").data(rateList.filter(function (d){if (d.avg>0) return true; else return false;})).enter().append("circle").attr("cx",function(d) {return xScale(d.rateIndex)}).attr("cy",function(d){return  yScale(d.avg)}).
+        attr("r",2).attr("stroke","#000").attr("fill",function(d){if (d.day==1) return "#fff";else return "#000"});
+    }else{
     svg.selectAll(".lines").data(rateList).enter().append("line").attr("stroke", "#000").attr("stroke-width", 0.8)
             .attr("x1", function(d) {return xScale(d.rateIndex)}).attr("y1",function(d){var rate= d.max; if (rate> maxRate) rate= maxRate;return yScale(rate)})
             .attr("x2", function(d) {return xScale(d.rateIndex)}).attr("y2",function(d){var rate= d.min; if (rate< minRate) rate= minRate;return yScale(rate)});
 
     svg.selectAll(".circle").data(rateList.filter(function (d){if (d.avg>=minRate&& d.avg<=maxRate) return true; else return false;})).enter().append("circle").attr("cx",function(d) {return xScale(d.rateIndex)}).attr("cy",function(d){return  yScale(d.avg)}).
     attr("r",2).attr("stroke","#000").attr("fill",function(d){if (d.day==1) return "#fff";else return "#000"});
-
+    }
 
   
     var lineIndex=[];

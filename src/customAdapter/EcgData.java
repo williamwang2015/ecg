@@ -5,6 +5,8 @@ import java.util.Map;
 
 public class EcgData {
 	private List dataList;
+	private List annoList;
+	private Boolean markLine=true;
 	private String eventDate;
 	private String eventName;
 	private String eventTime;
@@ -25,6 +27,18 @@ public class EcgData {
 	
 	
 	
+	public List getAnnoList() {
+		return annoList;
+	}
+	public void setAnnoList(List annoList) {
+		this.annoList = annoList;
+	}
+	public Boolean getMarkLine() {
+		return markLine;
+	}
+	public void setMarkLine(Boolean markLine) {
+		this.markLine = markLine;
+	}
 	public Map getRateData1() {
 		return rateData1;
 	}

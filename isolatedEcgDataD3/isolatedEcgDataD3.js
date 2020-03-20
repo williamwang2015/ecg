@@ -11,10 +11,10 @@ define(['d3','Triangle'], function (d3,Triangle) {
         
     var seconds = 2.4;
     var miniChatSeconds=9;
- 
-    
+    var annos=series[0].annos;//标注信息  
+  
      //图表宽度
-    var chatWidth = 180;
+    var chatWidth = instanceData.width;
     //高度根据宽度自动计算
     var chatHeight = chatWidth / 13 * 6 ;
 
@@ -39,7 +39,7 @@ define(['d3','Triangle'], function (d3,Triangle) {
         }
 
     var svg = d3.select("body").append("svg").attr("width", chatWidth).attr("height", paperHeight );
-    if (total>0){
+    if (datas!=null&&datas.length>0){
         svg.append("rect").attr("x", 0).attr("y", 0).attr("width", chatWidth).attr("height", chatHeight).attr("stroke-width", 0.6).attr("fill", "none").attr('stroke', '#000');
 
     //竖线
@@ -129,9 +129,9 @@ define(['d3','Triangle'], function (d3,Triangle) {
                 .attr("stroke-linecap", "round")
                 .attr("stroke-width", 0.4);
         //左侧底部刻度
-        svg.append("text").attr('x', x(50)).attr('y', y(-1.2)).text('25mm/s 10mm/mV').attr('font-size', 6).attr('text-anchor', 'start');
+        svg.append("text").attr('x', x(50)).attr('y', y(-1.4)).text('25mm/s 10mm/mV').attr('font-size', 6).attr('text-anchor', 'start');
          //右侧底部秒数
-        svg.append("text").attr('x', x(600)).attr('y', y(-1.2)).text(seconds + ' s').attr('font-size', 6).attr('text-anchor', 'end');
+        svg.append("text").attr('x', x(600)).attr('y', y(-1.4)).text(seconds + ' s').attr('font-size', 6).attr('text-anchor', 'end');
 
         //画底部小图
         svg.append("rect").attr("x",miniChatWidth/13+ (miniChatWidth/13*12) / miniChatSeconds * ((miniChatSeconds - seconds) / 2)).attr("y", chatHeight+offsetY)
@@ -170,7 +170,57 @@ define(['d3','Triangle'], function (d3,Triangle) {
                 .attr('d', minMarkerLine(minMarkerData)).attr("fill", "none")
                 .attr("stroke", "#000")
                 .attr("stroke-width", 0.4);
+      if (total!=null&&total>0)
         svg.append("text").attr('x',chatWidth).attr('y',paperHeight-5).text('总数:'+total).attr('text-anchor','end').attr('font-size',7).attr('dy',".35em");
+    
+     
+    if (annos!=null){
+    	var anno=[];
+    	for(j = 0,len=annos.length; j < len; j++) {
+    	    if (annos[j][0]>1450) break;
+          	if (annos[j][0]>=825 && annos[j][0]<1450)//3.3~5.8秒之间
+          	    anno.push(annos[j]);
+          	    
+         }
+      
+   svg.selectAll('.text').data(anno).enter().append('text').attr("x",function(d,i){
+       return  cx(d[0]-825);
+    }).attr("y",6).text(function(d){
+        return d[1];
+    }).attr('font-size', 6).attr('text-anchor', 'middle');
+    //rr 间期和心率
+    svg.selectAll('.text').data(anno).enter().append('text').attr("x",function(d,i){
+        if (d[2]>0){
+        if (i>0){
+            return cx((d[0]-anno[i-1][0])/2+anno[i-1][0]-825);
+        }else{
+            return cx((d[0]-825)/2);
+        }
+        }
+        return  0;
+        
+    }).attr("y",6).text(function(d,i){
+         if (i>0) return  d[2];
+    }).attr('font-size', 6).attr('text-anchor', 'middle');
+    
+    svg.selectAll('.text').data(anno).enter().append('text').attr("x",function(d,i){
+        if (d[2]>0){
+        if (i>0){
+            return cx((d[0]-anno[i-1][0])/2+anno[i-1][0]-825);
+        }else{
+        
+            return cx((d[0]-825)/2);
+        }
+        }
+        return  0;
+    }).attr("y",12).text(function(d,i){
+         if (i>0) return  d[3];
+    }).attr('font-size', 6).attr('text-anchor', 'middle');
+    
+    
+    }
+       
+    
     }else{
         svg.append("rect").attr("x", 0).attr("y", 0).attr("width", chatWidth).attr("height", paperHeight-8).attr("stroke-width", 0.6).attr("fill", "none").attr('stroke', '#000');
         svg.append("text").attr("x",10).attr("y",10).text('无').attr('font-size',7);

@@ -50,6 +50,10 @@
 	<field name="eventDate" class="java.lang.String">
 		<fieldDescription><![CDATA[eventDate]]></fieldDescription>
 	</field>
+	<field name="annoList" class="java.util.List">
+		<fieldDescription><![CDATA[annoList]]></fieldDescription>
+	</field>
+	<field name="markLine" class="java.lang.Boolean"/>
 	<detail>
 		<band height="175">
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
@@ -67,6 +71,12 @@
 							<cvc:itemProperty name="list">
 								<valueExpression><![CDATA[$F{dataList}]]></valueExpression>
 							</cvc:itemProperty>
+							<cvc:itemProperty name="markLine">
+								<valueExpression><![CDATA[$F{markLine}]]></valueExpression>
+							</cvc:itemProperty>
+							<cvc:itemProperty name="annos">
+								<valueExpression><![CDATA[$F{annoList}]]></valueExpression>
+							</cvc:itemProperty>
 							<cvc:itemProperty name="duration">
 								<valueExpression><![CDATA[$F{duration}]]></valueExpression>
 							</cvc:itemProperty>
@@ -75,7 +85,7 @@
 				</cvc:customvisualization>
 			</componentElement>
 			<textField>
-				<reportElement x="46" y="10" width="140" height="14" uuid="65139d68-7b5d-4c85-a49a-f6b5be9ff29f">
+				<reportElement x="46" y="10" width="200" height="14" uuid="65139d68-7b5d-4c85-a49a-f6b5be9ff29f">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 				</reportElement>
@@ -148,7 +158,7 @@
 				<textFieldExpression><![CDATA[$F{beats}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="280" y="28" width="60" height="14" uuid="a999438e-883d-4f00-bf43-6e76b6e7e315">
+				<reportElement x="280" y="28" width="50" height="14" uuid="a999438e-883d-4f00-bf43-6e76b6e7e315">
 					<printWhenExpression><![CDATA[$F{duration}!=null]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -157,27 +167,27 @@
 				<textFieldExpression><![CDATA[$F{duration}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="280" y="10" width="60" height="14" uuid="708b9c57-82df-4a0a-a006-fa750f501330">
+				<reportElement x="280" y="10" width="50" height="14" uuid="708b9c57-82df-4a0a-a006-fa750f501330">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<printWhenExpression><![CDATA[$F{duration}!=null]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="华文宋体" size="9" isBold="true"/>
 				</textElement>
-				<text><![CDATA[时长]]></text>
+				<text><![CDATA[事件时长]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="367" y="10" width="60" height="14" uuid="de95c9b6-c5eb-4622-af0b-bc3ffc0c1f3f">
+				<reportElement x="362" y="10" width="60" height="14" uuid="de95c9b6-c5eb-4622-af0b-bc3ffc0c1f3f">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<printWhenExpression><![CDATA[$F{average}!=null]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="华文宋体" size="9" isBold="true"/>
 				</textElement>
-				<text><![CDATA[平均心率]]></text>
+				<text><![CDATA[事件平均心率]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="367" y="28" width="60" height="14" uuid="7e536120-0baa-424f-ad6e-ce8870d7ae78">
+				<reportElement x="362" y="28" width="60" height="14" uuid="7e536120-0baa-424f-ad6e-ce8870d7ae78">
 					<printWhenExpression><![CDATA[$F{average}!=null]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -186,7 +196,7 @@
 				<textFieldExpression><![CDATA[$F{average}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="456" y="28" width="50" height="14" uuid="e751f18c-d10e-4fad-a293-025f4ab6f302">
+				<reportElement x="440" y="28" width="50" height="14" uuid="e751f18c-d10e-4fad-a293-025f4ab6f302">
 					<printWhenExpression><![CDATA[$F{range}!=null]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -195,14 +205,14 @@
 				<textFieldExpression><![CDATA[$F{range}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="456" y="10" width="50" height="14" uuid="a50b58e6-6a19-4db3-b5fe-b1ed4397ae22">
+				<reportElement x="440" y="10" width="66" height="14" uuid="a50b58e6-6a19-4db3-b5fe-b1ed4397ae22">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<printWhenExpression><![CDATA[$F{range}!=null]]></printWhenExpression>
 				</reportElement>
 				<textElement>
 					<font fontName="华文宋体" size="9" isBold="true"/>
 				</textElement>
-				<text><![CDATA[心率范围]]></text>
+				<text><![CDATA[事件心率范围]]></text>
 			</staticText>
 			<frame>
 				<reportElement mode="Opaque" x="512" y="7" width="60" height="38" backcolor="#DDECF4" uuid="6feef4a1-e4a1-42a5-9d98-694274a0c17e">

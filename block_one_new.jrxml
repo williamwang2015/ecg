@@ -10,6 +10,9 @@
 	<parameter name="range" class="java.lang.String"/>
 	<parameter name="sn" class="java.lang.String"/>
 	<parameter name="copyright" class="java.lang.String"/>
+	<parameter name="fragStyle" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
+	</parameter>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -123,7 +126,7 @@
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{details} )]]></dataSourceExpression>
-				<subreportExpression><![CDATA["block_rate.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[($P{fragStyle}.intValue()==1) ? "block_rate.jasper ":"block_rate30.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>
@@ -148,12 +151,15 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+$P{START_PAGE}]]></textFieldExpression>
 			</textField>
-			<image hAlign="Left" onErrorType="Blank">
-				<reportElement x="0" y="2" width="71" height="16" uuid="a1bf2e9d-d540-4361-8d8e-4c1859902499">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="4" y="4" width="84" height="14" uuid="7194cf50-65ae-48f1-a74f-016f32c05e5e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-				<imageExpression><![CDATA[$P{sn}]]></imageExpression>
-			</image>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sn}]]></textFieldExpression>
+			</textField>
 		</band>
 	</pageFooter>
 </jasperReport>

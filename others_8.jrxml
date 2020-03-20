@@ -59,6 +59,9 @@
 	<field name="ptTriggerShow" class="java.lang.Boolean">
 		<fieldDescription><![CDATA[ptTriggerShow]]></fieldDescription>
 	</field>
+	<field name="annoList" class="java.util.List">
+		<fieldDescription><![CDATA[annoList]]></fieldDescription>
+	</field>
 	<detail>
 		<band height="176" splitType="Immediate">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -75,6 +78,9 @@
 						<cvc:item>
 							<cvc:itemProperty name="list">
 								<valueExpression><![CDATA[$F{dataList}]]></valueExpression>
+							</cvc:itemProperty>
+							<cvc:itemProperty name="annos">
+								<valueExpression><![CDATA[$F{annoList}]]></valueExpression>
 							</cvc:itemProperty>
 							<cvc:itemProperty name="miniChatSeconds">
 								<valueExpression><![CDATA[$F{miniSeconds}]]></valueExpression>

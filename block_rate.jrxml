@@ -50,6 +50,9 @@
 	<field name="eventDate" class="java.lang.String">
 		<fieldDescription><![CDATA[eventDate]]></fieldDescription>
 	</field>
+	<field name="annoList" class="java.util.List">
+		<fieldDescription><![CDATA[annoList]]></fieldDescription>
+	</field>
 	<detail>
 		<band height="175">
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
@@ -66,6 +69,9 @@
 						<cvc:item>
 							<cvc:itemProperty name="list">
 								<valueExpression><![CDATA[$F{dataList}]]></valueExpression>
+							</cvc:itemProperty>
+							<cvc:itemProperty name="annos">
+								<valueExpression><![CDATA[$F{annoList}]]></valueExpression>
 							</cvc:itemProperty>
 							<cvc:itemProperty name="duration">
 								<valueExpression><![CDATA[$F{duration}]]></valueExpression>

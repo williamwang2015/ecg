@@ -61,6 +61,14 @@ public class EcgDataFactory {
 		ecgData.setHrvLf("37");
 		ecgData.setHrvVlf("18");
 		
+		ecgData.setAfShow(true);
+		ecgData.setAfBeats("15790");
+		ecgData.setAfLongestTimes("23m46s");
+		ecgData.setAfMaxRate("125bpm");
+		ecgData.setAfNums("12");
+		ecgData.setAfPercent("50%");
+		ecgData.setAfTimes("24h");
+		
 		ecgData.setResult("这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果"+
 				"这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果"+
 				"这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果"+
@@ -68,11 +76,11 @@ public class EcgDataFactory {
 				"这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果"+
 				"这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果这是自动分析结果");
 		
-		ecgData.setDoctorAdvice("这是医生诊断结果......\n第二行开始");
+		ecgData.setDoctorAdvice("这是医生诊断结果......\n第二行开始\n第3行开始\n第4行开始\n第5行开始\n第6行开始\n第7行开始\n第8行开始\n第9行开始\n第10行开始\n第11行开始\n第12行开始\n第13行开始\n第14行开始\n第15行开始\n第16行开始\n第17行开始");
 		ecgData.setLists(getSubCollection());
 		ecgData.setConfirmDate("2017/09/13");
-		ecgData.setSignUrl("http://localhost:8080/ent/upload/doctor/sign/doctor-37.jpg");
-		ecgData.setConfirmDoctor("张三");
+		ecgData.setSignUrl("http://localhost:8080/dev/upload/sysuser/sign/1539913313055.jpg");
+//		ecgData.setConfirmDoctor("张三");
 		datas.add(ecgData);
 		return datas;
 	}

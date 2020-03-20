@@ -35,6 +35,9 @@
 	<field name="duration" class="java.lang.String">
 		<fieldDescription><![CDATA[duration]]></fieldDescription>
 	</field>
+	<field name="annoList" class="java.util.List">
+		<fieldDescription><![CDATA[annoList]]></fieldDescription>
+	</field>
 	<detail>
 		<band height="175">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -51,6 +54,9 @@
 						<cvc:item>
 							<cvc:itemProperty name="list">
 								<valueExpression><![CDATA[$F{dataList}]]></valueExpression>
+							</cvc:itemProperty>
+							<cvc:itemProperty name="annos">
+								<valueExpression><![CDATA[$F{annoList}]]></valueExpression>
 							</cvc:itemProperty>
 						</cvc:item>
 					</cvc:cvData>
@@ -112,6 +118,44 @@
 					<font fontName="DejaVu Sans" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{index}.intValue()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="506" y="28" width="60" height="14" isRemoveLineWhenBlank="true" uuid="1991247e-2368-43c8-94d6-5207837656e0">
+					<printWhenExpression><![CDATA[$F{duration}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{duration}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="506" y="10" width="60" height="14" uuid="7770f3ac-a90d-4d6a-b6ff-94706624825d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{duration}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[时长]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="503" y="10" width="60" height="14" uuid="9f62b8ee-4adc-437e-a6f5-c18668e4d716">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{beats}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[心搏数]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="503" y="28" width="60" height="14" uuid="74e8efae-e16b-4873-8d87-e7f061ea8fa1">
+					<printWhenExpression><![CDATA[$F{beats}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{beats}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

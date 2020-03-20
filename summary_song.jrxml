@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="分析概要" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="66abdd78-e37a-49d6-a393-9187f213c94d">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="IndexDataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SumDataAdapter.xml"/>
 	<style name="ront" isBold="false">
 		<conditionalStyle>
 			<conditionExpression><![CDATA[Integer.parseInt($F{veRont})>0]]></conditionExpression>
@@ -656,7 +656,7 @@
 				<subreportExpression><![CDATA["summary_sub.jasper"]]></subreportExpression>
 			</subreport>
 			<frame>
-				<reportElement x="289" y="553" width="263" height="176" uuid="79edb138-b8c3-4c61-ab68-7f3489c06aba">
+				<reportElement x="289" y="553" width="263" height="178" uuid="79edb138-b8c3-4c61-ab68-7f3489c06aba">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
@@ -664,8 +664,8 @@
 					<pen lineWidth="0.6"/>
 				</box>
 				<textField isBlankWhenNull="true">
-					<reportElement x="2" y="23" width="259" height="127" uuid="4422bc7c-6bdc-4ec9-bcef-1471b3b7106f"/>
-					<box>
+					<reportElement x="2" y="18" width="259" height="142" uuid="4422bc7c-6bdc-4ec9-bcef-1471b3b7106f"/>
+					<box padding="0">
 						<pen lineWidth="0.6"/>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -673,18 +673,19 @@
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement>
-						<font fontName="华文宋体" size="9"/>
+						<font fontName="华文宋体" size="7"/>
+						<paragraph lineSpacing="Single"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{doctorAdvice}]]></textFieldExpression>
 				</textField>
-				<image hAlign="Right" onErrorType="Blank">
-					<reportElement x="114" y="154" width="71" height="15" uuid="8bc53727-364f-4777-9df2-5c5ba4a51e6e">
+				<image hAlign="Center" onErrorType="Blank">
+					<reportElement x="114" y="160" width="71" height="15" uuid="8bc53727-364f-4777-9df2-5c5ba4a51e6e">
 						<printWhenExpression><![CDATA[$F{signUrl}!=null && $P{isSign}]]></printWhenExpression>
 					</reportElement>
 					<imageExpression><![CDATA[$F{signUrl}]]></imageExpression>
 				</image>
 				<textField isBlankWhenNull="true">
-					<reportElement x="211" y="155" width="48" height="15" uuid="5f337023-c3eb-48c4-8975-f8a8daefd204">
+					<reportElement x="211" y="161" width="48" height="15" uuid="5f337023-c3eb-48c4-8975-f8a8daefd204">
 						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					</reportElement>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
@@ -694,13 +695,13 @@
 						<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="华文宋体" size="9" isUnderline="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{confirmDate}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="111" y="155" width="69" height="15" uuid="42f1ba27-132d-49dd-bac0-5a88f05cb284">
+					<reportElement x="111" y="161" width="69" height="15" uuid="42f1ba27-132d-49dd-bac0-5a88f05cb284">
 						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 						<printWhenExpression><![CDATA[$F{signUrl}==null&&$P{isSign}]]></printWhenExpression>
 					</reportElement>
@@ -716,14 +717,14 @@
 					<textFieldExpression><![CDATA[$F{confirmDoctor}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="4" y="4" width="100" height="16" uuid="42b046d5-f4d0-4526-9ea5-6f3282417881"/>
+					<reportElement x="2" y="1" width="100" height="16" uuid="42b046d5-f4d0-4526-9ea5-6f3282417881"/>
 					<textElement>
 						<font fontName="华文宋体" size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$P{doctorAdvice}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="85" y="157" width="30" height="15" uuid="84632a64-ebec-42bd-b910-8bd12189144a">
+					<reportElement x="85" y="161" width="30" height="15" uuid="84632a64-ebec-42bd-b910-8bd12189144a">
 						<printWhenExpression><![CDATA[$P{isSign}]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -732,7 +733,7 @@
 					<text><![CDATA[签名：]]></text>
 				</staticText>
 				<textField isBlankWhenNull="true">
-					<reportElement x="112" y="156" width="69" height="15" uuid="ef61326f-3ea6-494d-923a-8d50d64bc2a3">
+					<reportElement x="112" y="161" width="69" height="15" uuid="ef61326f-3ea6-494d-923a-8d50d64bc2a3">
 						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 						<printWhenExpression><![CDATA[$P{isSign}]]></printWhenExpression>
 					</reportElement>
@@ -744,7 +745,7 @@
 					</textElement>
 				</textField>
 				<staticText>
-					<reportElement x="185" y="157" width="28" height="15" uuid="d3f98778-43be-428e-95d1-e4b5f673d2f7"/>
+					<reportElement x="185" y="161" width="28" height="15" uuid="d3f98778-43be-428e-95d1-e4b5f673d2f7"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="华文宋体" size="9"/>
 					</textElement>

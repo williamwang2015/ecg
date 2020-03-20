@@ -130,4 +130,27 @@ public class SvtInfoFactory {
 		return map;
 		
 	}
+	
+	public static List getAnnoList(){
+		List annoList=new ArrayList();
+		Object[] anno=new Object[]{130,'N',0,0};
+		Object[] anno1=new Object[]{230,'S',670,45};
+		Object[] anno2=new Object[]{340,'V',600,70};
+		Object[] anno3=new Object[]{430,'N',620,72};
+		Object[] anno4=new Object[]{780,'S',1000,33};
+		Object[] anno5=new Object[]{780+2500,'S',1000,33};
+		Object[] anno6=new Object[]{980+2500,'S',1000,33};
+		Object[] anno7=new Object[]{780+5000,'S',1000,33};
+		Object[] anno8=new Object[]{880+5000,'S',1000,33};
+		annoList.add(anno);
+		annoList.add(anno1);
+		annoList.add(anno2);
+		annoList.add(anno3);
+		annoList.add(anno4);
+		annoList.add(anno5);
+		annoList.add(anno6);
+		annoList.add(anno7);
+		annoList.add(anno8);
+		return annoList;
+	}
 }

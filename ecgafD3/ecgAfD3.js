@@ -52,9 +52,9 @@ return function (instanceData) {
     svg.append("rect").attr("x",0).attr("y",startY+40).attr("width",8).attr("height",8).attr("fill",'#fff').attr('stroke','#000').attr('stroke-width',0.7);
     svg.append("text").attr("x",10).attr("y",startY+44).text('无').attr('font-size',7).attr('text-anchor','start').attr('dy',".35em");;
 
-    svg.append("text").attr("x",0).attr("y",startY+afHeight+6).text('时长').attr('font-size',7).attr('text-anchor','start').attr('dy',".35em");;
-    svg.append("text").attr("x",0).attr("y",startY+afHeight+14).text('不可分析时长').attr('font-size',7).attr('text-anchor','start').attr('dy',".35em");;
-    svg.append("text").attr("x",0).attr("y",startY+afHeight+22).text('有效数据占比').attr('font-size',7).attr('text-anchor','start').attr('dy',".35em");;
+    svg.append("text").attr("x",0).attr("y",startY+afHeight+6).text('房颤时长').attr('font-size',7).attr('text-anchor','start').attr('dy',".35em");;
+    svg.append("text").attr("x",0).attr("y",startY+afHeight+14).text('有效时长').attr('font-size',7).attr('text-anchor','start').attr('dy',".35em");;
+    svg.append("text").attr("x",0).attr("y",startY+afHeight+22).text('房颤占比').attr('font-size',7).attr('text-anchor','start').attr('dy',".35em");;
 
     var dayWidth=30;
     var dayDiff=14;

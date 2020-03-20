@@ -8,7 +8,7 @@ public class OtherInfoFactory {
 	public static List<OtherInfo> getCollection(){
 		List lists=new ArrayList<OtherInfo>();
 		
-		for (int i=0;i<30;i++){
+		for (int i=0;i<3;i++){
 			OtherInfo otherInfo=new OtherInfo();
 			EcgData info=new EcgData();
 			if (i==0)

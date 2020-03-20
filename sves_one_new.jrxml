@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="室上性节律" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="31c5bd3e-7f1a-4ab1-b4e4-a617f592984c">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SvesDataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="VesDataAdapter.xml"/>
 	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
 	<parameter name="START_PAGE" class="java.lang.Integer"/>
 	<parameter name="isolated" class="java.lang.String"/>
@@ -11,6 +11,9 @@
 	<parameter name="copyright" class="java.lang.String"/>
 	<parameter name="lvte" class="java.lang.String"/>
 	<parameter name="lvbe" class="java.lang.String"/>
+	<parameter name="fragStyle" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
+	</parameter>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -24,7 +27,7 @@
 		<fieldDescription><![CDATA[rateData2]]></fieldDescription>
 	</field>
 	<title>
-		<band height="228">
+		<band height="218">
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<staticText>
 				<reportElement x="1" y="2" width="154" height="28" uuid="69af078f-cdf8-416a-ae48-03a320d45667">
@@ -37,12 +40,12 @@
 				<text><![CDATA[室上性节律]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="57" width="575" height="1" uuid="201a575a-e04c-45b9-b879-6e1061d2d38d">
+				<reportElement x="0" y="53" width="575" height="1" uuid="201a575a-e04c-45b9-b879-6e1061d2d38d">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
 			</line>
 			<componentElement>
-				<reportElement key="" x="7" y="60" width="560" height="164" uuid="e5de589e-a90e-4952-8929-a284041c2ccb">
+				<reportElement key="" x="7" y="54" width="560" height="164" uuid="e5de589e-a90e-4952-8929-a284041c2ccb">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd" evaluationTime="Page">
@@ -134,12 +137,12 @@
 		</band>
 	</title>
 	<detail>
-		<band height="33" splitType="Immediate">
+		<band height="30" splitType="Immediate">
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<subreport overflowType="Stretch">
 				<reportElement x="1" y="2" width="574" height="25" uuid="70b5a8b5-ce9e-401a-b1de-4e5b2074d97f"/>
 				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{details} )]]></dataSourceExpression>
-				<subreportExpression><![CDATA["ve_rate.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[($P{fragStyle}.intValue()==1) ? "ve_rate.jasper ":"ve_rate30.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>
@@ -164,12 +167,15 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+$P{START_PAGE}]]></textFieldExpression>
 			</textField>
-			<image hAlign="Left" onErrorType="Blank">
-				<reportElement x="0" y="1" width="71" height="16" uuid="16cc8af9-2b72-461d-9b71-f333e74bd80f">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="4" y="3" width="84" height="14" uuid="bd0c8012-251b-4cb1-93eb-4a88190282f6">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-				<imageExpression><![CDATA[$P{sn}]]></imageExpression>
-			</image>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sn}]]></textFieldExpression>
+			</textField>
 		</band>
 	</pageFooter>
 </jasperReport>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="室速" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="31c5bd3e-7f1a-4ab1-b4e4-a617f592984c">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SvtDataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="svtDataAdapter.xml"/>
 	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
 	<parameter name="START_PAGE" class="java.lang.Integer"/>
 	<parameter name="nums" class="java.lang.Integer"/>
@@ -12,6 +12,9 @@
 	<parameter name="sn" class="java.lang.String"/>
 	<parameter name="copyright" class="java.lang.String"/>
 	<parameter name="totalSecs" class="java.lang.String"/>
+	<parameter name="fragStyle" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
+	</parameter>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -25,7 +28,7 @@
 		<fieldDescription><![CDATA[rateData2]]></fieldDescription>
 	</field>
 	<title>
-		<band height="226">
+		<band height="215">
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<staticText>
 				<reportElement x="1" y="2" width="112" height="28" uuid="69af078f-cdf8-416a-ae48-03a320d45667">
@@ -53,7 +56,7 @@
 				</reportElement>
 			</line>
 			<componentElement>
-				<reportElement key="" x="4" y="66" width="567" height="150" uuid="e5de589e-a90e-4952-8929-a284041c2ccb">
+				<reportElement key="" x="4" y="62" width="567" height="150" uuid="e5de589e-a90e-4952-8929-a284041c2ccb">
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
@@ -136,7 +139,7 @@
 		</band>
 	</title>
 	<detail>
-		<band height="33" splitType="Immediate">
+		<band height="30" splitType="Immediate">
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<subreport>
 				<reportElement mode="Transparent" x="1" y="1" width="570" height="25" uuid="b133898f-d780-4655-9f59-9dcb5ab2f237">
@@ -146,7 +149,7 @@
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{details} )]]></dataSourceExpression>
-				<subreportExpression><![CDATA["bc_rate.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[($P{fragStyle}.intValue()==1) ? "bc_rate.jasper ":"bc_rate30.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>
@@ -171,12 +174,15 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+$P{START_PAGE}]]></textFieldExpression>
 			</textField>
-			<image hAlign="Left" onErrorType="Blank">
-				<reportElement x="0" y="2" width="71" height="16" uuid="a1383d61-6c64-4e8c-90be-f641ade0ee37">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="4" y="4" width="84" height="14" uuid="e97807d1-0ce6-4027-92ff-0338cd2fbecc">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-				<imageExpression><![CDATA[$P{sn}]]></imageExpression>
-			</image>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sn}]]></textFieldExpression>
+			</textField>
 		</band>
 	</pageFooter>
 </jasperReport>
