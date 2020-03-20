@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="室性早搏" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="31c5bd3e-7f1a-4ab1-b4e4-a617f592984c">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="VesDataAdapter.xml"/>
+	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
+	<parameter name="START_PAGE" class="java.lang.Integer"/>
+	<parameter name="isolated" class="java.lang.String"/>
+	<parameter name="couplets" class="java.lang.String"/>
+	<parameter name="triplets" class="java.lang.String"/>
+	<parameter name="lvbe" class="java.lang.String"/>
+	<parameter name="lvte" class="java.lang.String"/>
+	<parameter name="sn" class="java.lang.String"/>
+	<parameter name="copyright" class="java.lang.String"/>
+	<parameter name="fragStyle" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="triplet" class="java.util.List">
+		<fieldDescription><![CDATA[triplet]]></fieldDescription>
+	</field>
+	<field name="rateData1" class="java.util.Map">
+		<fieldDescription><![CDATA[rateData1]]></fieldDescription>
+	</field>
+	<field name="rateData2" class="java.util.Map">
+		<fieldDescription><![CDATA[rateData2]]></fieldDescription>
+	</field>
+	<field name="couplet" class="java.util.List">
+		<fieldDescription><![CDATA[couplet]]></fieldDescription>
+	</field>
+	<field name="isolated1" class="java.util.List">
+		<fieldDescription><![CDATA[isolated1]]></fieldDescription>
+	</field>
+	<field name="isolated2" class="java.util.List">
+		<fieldDescription><![CDATA[isolated2]]></fieldDescription>
+	</field>
+	<field name="isolated3" class="java.util.List">
+		<fieldDescription><![CDATA[isolated3]]></fieldDescription>
+	</field>
+	<field name="isolatedNum1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[isolatedNum1]]></fieldDescription>
+	</field>
+	<field name="isolatedNum2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[isolatedNum2]]></fieldDescription>
+	</field>
+	<field name="isolatedNum3" class="java.lang.Integer">
+		<fieldDescription><![CDATA[isolatedNum3]]></fieldDescription>
+	</field>
+	<field name="coupletNum" class="java.lang.Integer">
+		<fieldDescription><![CDATA[coupletNum]]></fieldDescription>
+	</field>
+	<field name="tripletNum" class="java.lang.Integer">
+		<fieldDescription><![CDATA[tripletNum]]></fieldDescription>
+	</field>
+	<field name="details" class="java.util.List">
+		<fieldDescription><![CDATA[details]]></fieldDescription>
+	</field>
+	<field name="tripletDate" class="java.lang.String">
+		<fieldDescription><![CDATA[tripletDate]]></fieldDescription>
+	</field>
+	<field name="tripletTime" class="java.lang.String">
+		<fieldDescription><![CDATA[tripletTime]]></fieldDescription>
+	</field>
+	<field name="coupletDate" class="java.lang.String">
+		<fieldDescription><![CDATA[coupletDate]]></fieldDescription>
+	</field>
+	<field name="coupletTime" class="java.lang.String">
+		<fieldDescription><![CDATA[coupletTime]]></fieldDescription>
+	</field>
+	<field name="isolatedIndex" class="java.lang.Integer">
+		<fieldDescription><![CDATA[isolatedIndex]]></fieldDescription>
+	</field>
+	<field name="coupletIndex" class="java.lang.Integer">
+		<fieldDescription><![CDATA[coupletIndex]]></fieldDescription>
+	</field>
+	<field name="tripletIndex" class="java.lang.Integer">
+		<fieldDescription><![CDATA[tripletIndex]]></fieldDescription>
+	</field>
+	<field name="isolatedAnno1" class="java.util.List">
+		<fieldDescription><![CDATA[isolatedAnno1]]></fieldDescription>
+	</field>
+	<field name="tripletAnno" class="java.util.List">
+		<fieldDescription><![CDATA[tripletAnno]]></fieldDescription>
+	</field>
+	<field name="isolatedAnno2" class="java.util.List">
+		<fieldDescription><![CDATA[isolatedAnno2]]></fieldDescription>
+	</field>
+	<field name="isolatedAnno3" class="java.util.List">
+		<fieldDescription><![CDATA[isolatedAnno3]]></fieldDescription>
+	</field>
+	<field name="coupletAnno" class="java.util.List">
+		<fieldDescription><![CDATA[coupletAnno]]></fieldDescription>
+	</field>
+	<field name="isolatedShow1" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[isolatedShow1]]></fieldDescription>
+	</field>
+	<field name="isolatedShow3" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[isolatedShow3]]></fieldDescription>
+	</field>
+	<field name="isolatedShow2" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[isolatedShow2]]></fieldDescription>
+	</field>
+	<title>
+		<band height="736">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement x="1" y="2" width="154" height="28" uuid="69af078f-cdf8-416a-ae48-03a320d45667">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="黑体" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[室性节律]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="36" width="34" height="14" uuid="9c522cf9-4cc8-4dce-b9e0-0e24ebc26308">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<text><![CDATA[单发]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="106" y="36" width="25" height="14" uuid="43101943-3869-47cc-a9f6-c84703396b3b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<text><![CDATA[成对]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="57" width="575" height="1" uuid="201a575a-e04c-45b9-b879-6e1061d2d38d">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+			<componentElement>
+				<reportElement key="" x="7" y="61" width="560" height="164" uuid="e5de589e-a90e-4952-8929-a284041c2ccb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd" evaluationTime="Page">
+					<cvc:itemProperty name="script" value="ectopyd3/ectopyd3.min.js"/>
+					<cvc:itemProperty name="module" value="ectopyD3"/>
+					<cvc:cvData>
+						<dataset/>
+						<cvc:item>
+							<cvc:itemProperty name="list">
+								<valueExpression><![CDATA[$F{rateData1}]]></valueExpression>
+							</cvc:itemProperty>
+						</cvc:item>
+					</cvc:cvData>
+				</cvc:customvisualization>
+			</componentElement>
+			<textField>
+				<reportElement x="42" y="36" width="58" height="14" uuid="911560a7-150a-4c96-9fda-481a3cbaf62a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font fontName="华文宋体" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{isolated}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="134" y="36" width="58" height="14" uuid="574d1f80-7053-40a1-85e9-07928bc9f436">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font fontName="华文宋体" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{couplets}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="227" width="575" height="1" uuid="c0418d39-800a-41b6-b58a-df4fa27ebc05">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="570" width="575" height="1" isRemoveLineWhenBlank="true" uuid="8dbd3068-59cd-4c68-ad92-af3d098b03d8">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{coupletIndex}.intValue()>0||$F{tripletIndex}.intValue()>0]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<componentElement>
+				<reportElement key="" x="7" y="232" width="560" height="164" uuid="a3df635a-7210-4876-b508-cf1c2d479b52">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd" evaluationTime="Page">
+					<cvc:itemProperty name="script" value="ectopyd3/ectopyd3.min.js"/>
+					<cvc:itemProperty name="module" value="ectopyD3"/>
+					<cvc:cvData>
+						<dataset/>
+						<cvc:item>
+							<cvc:itemProperty name="list">
+								<valueExpression><![CDATA[$F{rateData1}]]></valueExpression>
+							</cvc:itemProperty>
+						</cvc:item>
+					</cvc:cvData>
+				</cvc:customvisualization>
+			</componentElement>
+			<line>
+				<reportElement x="0" y="402" width="575" height="1" isRemoveLineWhenBlank="true" uuid="fd35fd68-b09c-4299-84ca-4ab2f99a8ef3">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{isolatedIndex}.intValue()>0]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<ellipse>
+				<reportElement x="6" y="406" width="20" height="20" backcolor="#050505" uuid="d591fbcf-5357-40f1-ab92-688030b7c2c6">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{isolatedIndex}.intValue()>0]]></printWhenExpression>
+				</reportElement>
+			</ellipse>
+			<ellipse>
+				<reportElement x="6" y="575" width="20" height="20" backcolor="#050505" uuid="fcf2213a-1165-41a5-892c-2a3247b76c53">
+					<printWhenExpression><![CDATA[$F{coupletIndex}.intValue()>0]]></printWhenExpression>
+				</reportElement>
+			</ellipse>
+			<ellipse>
+				<reportElement x="298" y="575" width="20" height="20" backcolor="#050505" uuid="82e924ea-d48f-45c2-83f5-064dfd723f27">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{tripletIndex}.intValue()>0]]></printWhenExpression>
+				</reportElement>
+			</ellipse>
+			<staticText>
+				<reportElement x="312" y="36" width="50" height="14" uuid="a2e1c591-9cdb-4368-b5a7-39c3d8e7e3e2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<text><![CDATA[二联律]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="424" y="36" width="50" height="14" uuid="30ff505a-b421-4c03-82e0-b3145bf903db">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<text><![CDATA[三联律]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="365" y="36" width="53" height="14" uuid="bf28c085-a508-4a14-a759-410cb6d27edc">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font fontName="华文宋体" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{lvbe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="479" y="36" width="80" height="14" uuid="ab303602-ef59-4e76-bd6b-2b106aa04921">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font fontName="华文宋体" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{lvte}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="229" y="36" width="76" height="14" uuid="0dd25bad-1592-487b-853c-d8a9c12b2458"/>
+				<textElement>
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{triplets}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="197" y="36" width="28" height="14" uuid="0b502e44-e8b5-4efe-a9e3-430a4ac58f5a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RonT]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="1" y="408" width="571" height="155" isRemoveLineWhenBlank="true" uuid="f39f00e3-d2bf-40a4-944f-d25c0b5c5010">
+					<printWhenExpression><![CDATA[$F{isolatedIndex}.intValue()>0]]></printWhenExpression>
+				</reportElement>
+				<componentElement>
+					<reportElement key="" x="0" y="23" width="180" height="132" uuid="43253799-c3e5-4d44-add9-b4980e890ca7">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<printWhenExpression><![CDATA[$F{isolatedShow1}]]></printWhenExpression>
+					</reportElement>
+					<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd" evaluationTime="Page">
+						<cvc:itemProperty name="script" value="isolatedEcgDatad3/isolatedEcgDataD3.min.js"/>
+						<cvc:itemProperty name="module" value="isolatedEcgDataD3"/>
+						<cvc:cvData>
+							<dataset/>
+							<cvc:item>
+								<cvc:itemProperty name="list">
+									<valueExpression><![CDATA[$F{isolated1}]]></valueExpression>
+								</cvc:itemProperty>
+								<cvc:itemProperty name="annos">
+									<valueExpression><![CDATA[$F{isolatedAnno1}]]></valueExpression>
+								</cvc:itemProperty>
+								<cvc:itemProperty name="num">
+									<valueExpression><![CDATA[$F{isolatedNum1}]]></valueExpression>
+								</cvc:itemProperty>
+							</cvc:item>
+						</cvc:cvData>
+					</cvc:customvisualization>
+				</componentElement>
+				<componentElement>
+					<reportElement key="" x="194" y="23" width="180" height="132" uuid="68eee5c0-4b95-4c6b-837c-73b43b27b6de">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<printWhenExpression><![CDATA[$F{isolatedShow2}]]></printWhenExpression>
+					</reportElement>
+					<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd" evaluationTime="Page">
+						<cvc:itemProperty name="script" value="isolatedEcgDataD3/isolatedEcgDataD3.min.js"/>
+						<cvc:itemProperty name="module" value="isolatedEcgDataD3"/>
+						<cvc:cvData>
+							<dataset/>
+							<cvc:item>
+								<cvc:itemProperty name="list">
+									<valueExpression><![CDATA[$F{isolated2}]]></valueExpression>
+								</cvc:itemProperty>
+								<cvc:itemProperty name="annos">
+									<valueExpression><![CDATA[$F{isolatedAnno2}]]></valueExpression>
+								</cvc:itemProperty>
+								<cvc:itemProperty name="num">
+									<valueExpression><![CDATA[$F{isolatedNum2}]]></valueExpression>
+								</cvc:itemProperty>
+							</cvc:item>
+						</cvc:cvData>
+					</cvc:customvisualization>
+				</componentElement>
+				<componentElement>
+					<reportElement key="" x="391" y="23" width="180" height="132" uuid="5989dacd-75ab-4b02-96a2-e61724f75840">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<printWhenExpression><![CDATA[$F{isolatedShow3}]]></printWhenExpression>
+					</reportElement>
+					<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd" evaluationTime="Page">
+						<cvc:itemProperty name="script" value="isolatedEcgDatad3/isolatedEcgDatad3.min.js"/>
+						<cvc:itemProperty name="module" value="isolatedEcgDataD3"/>
+						<cvc:cvData>
+							<dataset/>
+							<cvc:item>
+								<cvc:itemProperty name="list">
+									<valueExpression><![CDATA[$F{isolated3}]]></valueExpression>
+								</cvc:itemProperty>
+								<cvc:itemProperty name="annos">
+									<valueExpression><![CDATA[$F{isolatedAnno3}]]></valueExpression>
+								</cvc:itemProperty>
+								<cvc:itemProperty name="num">
+									<valueExpression><![CDATA[$F{isolatedNum3}]]></valueExpression>
+								</cvc:itemProperty>
+							</cvc:item>
+						</cvc:cvData>
+					</cvc:customvisualization>
+				</componentElement>
+				<staticText>
+					<reportElement x="29" y="1" width="60" height="14" uuid="b07cbc17-f3a1-4082-a9fc-b8c2074efcd9">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[典型室早形态]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="9" y="0" width="10" height="18" forecolor="#FFFFFF" uuid="5c079af7-aeef-4172-a09a-4ec656d245a3"/>
+					<textElement>
+						<font fontName="DejaVu Sans" size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{isolatedIndex}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="1" y="577" width="255" height="154" isRemoveLineWhenBlank="true" uuid="075d8995-172c-41d1-a63c-bc6b9e0524e5">
+					<printWhenExpression><![CDATA[$F{coupletIndex}.intValue()>0]]></printWhenExpression>
+				</reportElement>
+				<componentElement>
+					<reportElement key="" x="0" y="24" width="255" height="130" uuid="8ca0098e-2e27-497f-89cd-c53c5942bf52">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd" evaluationTime="Page">
+						<cvc:itemProperty name="script" value="VeEcgDataD3/VeEcgDatad3.min.js"/>
+						<cvc:itemProperty name="module" value="veEcgDataD3"/>
+						<cvc:cvData>
+							<dataset/>
+							<cvc:item>
+								<cvc:itemProperty name="list">
+									<valueExpression><![CDATA[$F{couplet}]]></valueExpression>
+								</cvc:itemProperty>
+								<cvc:itemProperty name="annos">
+									<valueExpression><![CDATA[$F{coupletAnno}]]></valueExpression>
+								</cvc:itemProperty>
+								<cvc:itemProperty name="num">
+									<valueExpression><![CDATA[$F{coupletNum}]]></valueExpression>
+								</cvc:itemProperty>
+							</cvc:item>
+						</cvc:cvData>
+					</cvc:customvisualization>
+				</componentElement>
+				<staticText>
+					<reportElement x="29" y="1" width="29" height="14" uuid="78d86791-d049-41cf-92f0-2ab9befafcb1">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[成对]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="125" y="2" width="60" height="14" uuid="11abae01-f3a4-456f-bd32-2537cb34a37a">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{coupletDate}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="185" y="2" width="70" height="14" uuid="7144ba3e-89a1-4885-a340-814767cfecfc">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{coupletTime}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="9" y="0" width="10" height="18" forecolor="#FFFFFF" uuid="cae333f6-4d8a-4b39-86b9-26a6339cfa55"/>
+					<textElement>
+						<font fontName="DejaVu Sans" size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{coupletIndex}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement key="rontFrame" x="294" y="577" width="255" height="156" isRemoveLineWhenBlank="true" uuid="9adb6c80-0863-433e-a1b5-8815924e1e0c">
+					<printWhenExpression><![CDATA[$F{tripletIndex}.intValue()>0]]></printWhenExpression>
+				</reportElement>
+				<componentElement>
+					<reportElement key="" x="0" y="24" width="255" height="132" uuid="df7c1377-f2de-4575-af2f-29023fd349dc">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<cvc:customvisualization xmlns:cvc="http://www.jaspersoft.com/cvcomponent" xsi:schemaLocation="http://www.jaspersoft.com/cvcomponent http://www.jaspersoft.com/cvcomponent/component.xsd" evaluationTime="Page">
+						<cvc:itemProperty name="script" value="VeEcgDataD3/VeEcgDataD3.min.js"/>
+						<cvc:itemProperty name="module" value="veEcgDataD3"/>
+						<cvc:cvData>
+							<dataset/>
+							<cvc:item>
+								<cvc:itemProperty name="list">
+									<valueExpression><![CDATA[$F{triplet}]]></valueExpression>
+								</cvc:itemProperty>
+								<cvc:itemProperty name="annos">
+									<valueExpression><![CDATA[$F{tripletAnno}]]></valueExpression>
+								</cvc:itemProperty>
+								<cvc:itemProperty name="num">
+									<valueExpression><![CDATA[$F{tripletNum}]]></valueExpression>
+								</cvc:itemProperty>
+							</cvc:item>
+						</cvc:cvData>
+					</cvc:customvisualization>
+				</componentElement>
+				<staticText>
+					<reportElement x="27" y="1" width="36" height="14" uuid="3af95234-8efc-408e-8956-3e890bbdacc6">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[RonT]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="125" y="2" width="60" height="14" uuid="e4cc0737-2d36-4249-8c37-c24df2f0a4cd">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tripletDate}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="185" y="2" width="70" height="14" uuid="96a7a874-0215-443a-8860-f78313b6013d">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tripletTime}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="10" y="0" width="10" height="18" forecolor="#FFFFFF" uuid="41d125d8-91b2-4d69-913c-b75a64443846"/>
+					<textElement>
+						<font fontName="DejaVu Sans" size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tripletIndex}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<detail>
+		<band height="38">
+			<subreport overflowType="Stretch">
+				<reportElement x="1" y="5" width="562" height="25" uuid="62a2eaef-0b27-4ca4-9753-c72b84780be2"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{details} )]]></dataSourceExpression>
+				<subreportExpression><![CDATA[($P{fragStyle}.intValue()==1) ? "ve_rate.jasper ":"ve_rate30.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="24">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="177" y="10" width="220" height="14" uuid="aef34d89-b7aa-4910-b411-d9431b686df1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{copyright}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="491" y="10" width="84" height="14" uuid="c3b94bfd-1508-4352-a0ce-35195f8794b6">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+$P{START_PAGE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="10" width="84" height="14" uuid="5f7e228e-6665-45d8-b8d2-3ae6baf48ebd">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sn}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,1294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="分析概要" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="66abdd78-e37a-49d6-a393-9187f213c94d">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SumDataAdapter.xml"/>
+	<style name="ront" isBold="false">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[Integer.parseInt($F{veRont})>0]]></conditionExpression>
+			<style isBold="true"/>
+		</conditionalStyle>
+	</style>
+	<style name="res" fontName="华文宋体" fontSize="9">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{result}.length()>350]]></conditionExpression>
+			<style fontSize="8"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="sn" class="java.lang.String"/>
+	<parameter name="copyright" class="java.lang.String"/>
+	<parameter name="title" class="java.lang.String"/>
+	<parameter name="logoUrl" class="java.lang.String"/>
+	<parameter name="patientId" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[患者ID]]></parameterDescription>
+	</parameter>
+	<parameter name="doctor" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="doctorTitle" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="reportNo" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="doctorAdvice" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="isSign" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[true]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="birthday" class="java.lang.String">
+		<fieldDescription><![CDATA[birthday]]></fieldDescription>
+	</field>
+	<field name="veRont" class="java.lang.String">
+		<fieldDescription><![CDATA[veRont]]></fieldDescription>
+	</field>
+	<field name="sveCouplet" class="java.lang.String">
+		<fieldDescription><![CDATA[sveCouplet]]></fieldDescription>
+	</field>
+	<field name="patientId" class="java.lang.String">
+		<fieldDescription><![CDATA[patientId]]></fieldDescription>
+	</field>
+	<field name="veLvte" class="java.lang.String">
+		<fieldDescription><![CDATA[veLvte]]></fieldDescription>
+	</field>
+	<field name="hrvPnn50" class="java.lang.String">
+		<fieldDescription><![CDATA[hrvPnn50]]></fieldDescription>
+	</field>
+	<field name="sveCount" class="java.lang.String">
+		<fieldDescription><![CDATA[sveCount]]></fieldDescription>
+	</field>
+	<field name="analysisTimes" class="java.lang.String">
+		<fieldDescription><![CDATA[analysisTimes]]></fieldDescription>
+	</field>
+	<field name="result" class="java.lang.String">
+		<fieldDescription><![CDATA[result]]></fieldDescription>
+	</field>
+	<field name="hrvVlf" class="java.lang.String">
+		<fieldDescription><![CDATA[hrvVlf]]></fieldDescription>
+	</field>
+	<field name="minRateTime" class="java.lang.String">
+		<fieldDescription><![CDATA[minRateTime]]></fieldDescription>
+	</field>
+	<field name="recordTimes" class="java.lang.String">
+		<fieldDescription><![CDATA[recordTimes]]></fieldDescription>
+	</field>
+	<field name="veLvbe" class="java.lang.String">
+		<fieldDescription><![CDATA[veLvbe]]></fieldDescription>
+	</field>
+	<field name="veTriplet" class="java.lang.String">
+		<fieldDescription><![CDATA[veTriplet]]></fieldDescription>
+	</field>
+	<field name="sveIsolated" class="java.lang.String">
+		<fieldDescription><![CDATA[sveIsolated]]></fieldDescription>
+	</field>
+	<field name="beginTime" class="java.lang.String">
+		<fieldDescription><![CDATA[beginTime]]></fieldDescription>
+	</field>
+	<field name="reportNo" class="java.lang.String">
+		<fieldDescription><![CDATA[reportNo]]></fieldDescription>
+	</field>
+	<field name="hrvRmsdd" class="java.lang.String">
+		<fieldDescription><![CDATA[hrvRmsdd]]></fieldDescription>
+	</field>
+	<field name="maxRateTime" class="java.lang.String">
+		<fieldDescription><![CDATA[maxRateTime]]></fieldDescription>
+	</field>
+	<field name="doctorTitle" class="java.lang.String">
+		<fieldDescription><![CDATA[doctorTitle]]></fieldDescription>
+	</field>
+	<field name="hrvHf" class="java.lang.String">
+		<fieldDescription><![CDATA[hrvHf]]></fieldDescription>
+	</field>
+	<field name="sex" class="java.lang.String">
+		<fieldDescription><![CDATA[sex]]></fieldDescription>
+	</field>
+	<field name="hrvSdnnIndex" class="java.lang.String">
+		<fieldDescription><![CDATA[hrvSdnnIndex]]></fieldDescription>
+	</field>
+	<field name="hrvLf" class="java.lang.String">
+		<fieldDescription><![CDATA[hrvLf]]></fieldDescription>
+	</field>
+	<field name="hrvSdnn" class="java.lang.String">
+		<fieldDescription><![CDATA[hrvSdnn]]></fieldDescription>
+	</field>
+	<field name="maxRate" class="java.lang.String">
+		<fieldDescription><![CDATA[maxRate]]></fieldDescription>
+	</field>
+	<field name="hrvTi" class="java.lang.String">
+		<fieldDescription><![CDATA[hrvTi]]></fieldDescription>
+	</field>
+	<field name="veIsolated" class="java.lang.String">
+		<fieldDescription><![CDATA[veIsolated]]></fieldDescription>
+	</field>
+	<field name="doctor" class="java.lang.String">
+		<fieldDescription><![CDATA[doctor]]></fieldDescription>
+	</field>
+	<field name="doctorAdvice" class="java.lang.String">
+		<fieldDescription><![CDATA[doctorAdvice]]></fieldDescription>
+	</field>
+	<field name="lists" class="java.util.List">
+		<fieldDescription><![CDATA[lists]]></fieldDescription>
+	</field>
+	<field name="veCouplet" class="java.lang.String">
+		<fieldDescription><![CDATA[veCouplet]]></fieldDescription>
+	</field>
+	<field name="avgRate" class="java.lang.String">
+		<fieldDescription><![CDATA[avgRate]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[name]]></fieldDescription>
+	</field>
+	<field name="minRate" class="java.lang.String">
+		<fieldDescription><![CDATA[minRate]]></fieldDescription>
+	</field>
+	<field name="clinic" class="java.lang.String">
+		<fieldDescription><![CDATA[clinic]]></fieldDescription>
+	</field>
+	<field name="endTime" class="java.lang.String">
+		<fieldDescription><![CDATA[endTime]]></fieldDescription>
+	</field>
+	<field name="indication" class="java.lang.String">
+		<fieldDescription><![CDATA[indication]]></fieldDescription>
+	</field>
+	<field name="sveTriplet" class="java.lang.String">
+		<fieldDescription><![CDATA[sveTriplet]]></fieldDescription>
+	</field>
+	<field name="veCount" class="java.lang.String">
+		<fieldDescription><![CDATA[veCount]]></fieldDescription>
+	</field>
+	<field name="sveShow" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[sveShow]]></fieldDescription>
+	</field>
+	<field name="veShow" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[veShow]]></fieldDescription>
+	</field>
+	<field name="beatNum" class="java.lang.Integer">
+		<fieldDescription><![CDATA[beatNum]]></fieldDescription>
+	</field>
+	<field name="veTripletPercent" class="java.lang.String">
+		<fieldDescription><![CDATA[veTripletPercent]]></fieldDescription>
+	</field>
+	<field name="sveCoupletPercent" class="java.lang.String">
+		<fieldDescription><![CDATA[sveCoupletPercent]]></fieldDescription>
+	</field>
+	<field name="veRontPercent" class="java.lang.String">
+		<fieldDescription><![CDATA[veRontPercent]]></fieldDescription>
+	</field>
+	<field name="veCoupletPercent" class="java.lang.String">
+		<fieldDescription><![CDATA[veCoupletPercent]]></fieldDescription>
+	</field>
+	<field name="veIsolatedPercent" class="java.lang.String">
+		<fieldDescription><![CDATA[veIsolatedPercent]]></fieldDescription>
+	</field>
+	<field name="sveIsolatedPercent" class="java.lang.String">
+		<fieldDescription><![CDATA[sveIsolatedPercent]]></fieldDescription>
+	</field>
+	<field name="sveTripletPercent" class="java.lang.String">
+		<fieldDescription><![CDATA[sveTripletPercent]]></fieldDescription>
+	</field>
+	<field name="confirmDate" class="java.lang.String">
+		<fieldDescription><![CDATA[confirmDate]]></fieldDescription>
+	</field>
+	<field name="confirmDoctor" class="java.lang.String">
+		<fieldDescription><![CDATA[confirmDoctor]]></fieldDescription>
+	</field>
+	<field name="signUrl" class="java.lang.String">
+		<fieldDescription><![CDATA[signUrl]]></fieldDescription>
+	</field>
+	<field name="sveLvte" class="java.lang.String">
+		<fieldDescription><![CDATA[sveLvte]]></fieldDescription>
+	</field>
+	<field name="sveLvbe" class="java.lang.String">
+		<fieldDescription><![CDATA[sveLvbe]]></fieldDescription>
+	</field>
+	<field name="svtCount" class="java.lang.String">
+		<fieldDescription><![CDATA[svtCount]]></fieldDescription>
+	</field>
+	<field name="vtCount" class="java.lang.String">
+		<fieldDescription><![CDATA[vtCount]]></fieldDescription>
+	</field>
+	<field name="svtTime" class="java.lang.String">
+		<fieldDescription><![CDATA[svtTime]]></fieldDescription>
+	</field>
+	<field name="vtTime" class="java.lang.String">
+		<fieldDescription><![CDATA[vtTime]]></fieldDescription>
+	</field>
+	<field name="hospitalNo" class="java.lang.String"/>
+	<field name="bedNo" class="java.lang.String"/>
+	<field name="afPercent" class="java.lang.String">
+		<fieldDescription><![CDATA[afPercent]]></fieldDescription>
+	</field>
+	<field name="afNums" class="java.lang.String">
+		<fieldDescription><![CDATA[afNums]]></fieldDescription>
+	</field>
+	<field name="afTimes" class="java.lang.String">
+		<fieldDescription><![CDATA[afTimes]]></fieldDescription>
+	</field>
+	<field name="afBeats" class="java.lang.String">
+		<fieldDescription><![CDATA[afBeats]]></fieldDescription>
+	</field>
+	<field name="afMaxRate" class="java.lang.String">
+		<fieldDescription><![CDATA[afMaxRate]]></fieldDescription>
+	</field>
+	<field name="afLongestTimes" class="java.lang.String">
+		<fieldDescription><![CDATA[afLongestTimes]]></fieldDescription>
+	</field>
+	<field name="afShow" class="java.lang.Boolean"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="51" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<image>
+				<reportElement x="12" y="7" width="29" height="40" uuid="da773c7d-9679-4c1b-a805-c7b03cb0675a"/>
+				<imageExpression><![CDATA[$P{logoUrl}]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="true" bookmarkLevel="1">
+				<reportElement x="468" y="35" width="81" height="14" uuid="f97b45a4-e3ef-47c9-84c2-673220d62b39"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{reportNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="134" y="14" width="278" height="30" uuid="57be7ed0-ab36-45dd-a903-a93dba44b7f3">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="黑体" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{title}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="412" y="35" width="51" height="14" uuid="965a8e11-891e-41f1-ba48-9fa25382081c"/>
+				<textElement>
+					<font fontName="华文宋体" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{reportNo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="731" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement x="2" y="420" width="268" height="113" uuid="38995d9a-2eed-4644-88e1-65151328a4ea">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<printWhenExpression><![CDATA[!$F{afShow}]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="14"/>
+				</textElement>
+				<text><![CDATA[未发现]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="99" width="550" height="20" uuid="ddefbd5d-25d7-48ad-887b-83d8cd6923d2"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="华文宋体" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[心率概况]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="187" width="268" height="20" uuid="2d0461eb-46d2-476b-a344-e1a488f6e3e4"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="华文宋体" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[室上性节律]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="282" y="187" width="269" height="20" uuid="22f4819d-d05f-47aa-856f-3e62d13bb7fa">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="华文宋体" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[室性节律]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="282" y="399" width="268" height="20" uuid="83837b2a-0e54-4f48-a491-5e0b9fa49a9e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="华文宋体" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[心率变异]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="208" width="268" height="180" uuid="bba733d5-b03f-482c-84fc-16622e8ca332">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<printWhenExpression><![CDATA[!$F{sveShow}]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="14"/>
+				</textElement>
+				<text><![CDATA[未发现]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="282" y="208" width="269" height="180" uuid="1e737e68-49e4-4b7e-85f4-879bfe854b2a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<printWhenExpression><![CDATA[!$F{veShow}]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="14"/>
+				</textElement>
+				<text><![CDATA[未发现]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="1" y="540" width="551" height="191" uuid="79edb138-b8c3-4c61-ab68-7f3489c06aba">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.6"/>
+				</box>
+				<textField isBlankWhenNull="true">
+					<reportElement x="2" y="27" width="546" height="143" uuid="4422bc7c-6bdc-4ec9-bcef-1471b3b7106f"/>
+					<box padding="0">
+						<pen lineWidth="0.6"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="华文宋体" size="9"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{doctorAdvice}]]></textFieldExpression>
+				</textField>
+				<image hAlign="Center" onErrorType="Blank">
+					<reportElement x="403" y="172" width="71" height="15" uuid="8bc53727-364f-4777-9df2-5c5ba4a51e6e">
+						<printWhenExpression><![CDATA[$F{signUrl}!=null && $P{isSign}]]></printWhenExpression>
+					</reportElement>
+					<imageExpression><![CDATA[$F{signUrl}]]></imageExpression>
+				</image>
+				<textField isBlankWhenNull="true">
+					<reportElement x="500" y="173" width="48" height="15" uuid="5f337023-c3eb-48c4-8975-f8a8daefd204">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+						<pen lineWidth="0.25" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="华文宋体" size="9" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{confirmDate}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="400" y="173" width="69" height="15" uuid="42f1ba27-132d-49dd-bac0-5a88f05cb284">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<printWhenExpression><![CDATA[$F{signUrl}==null&&$P{isSign}]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="华文宋体" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{confirmDoctor}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="1" y="1" width="550" height="23" uuid="42b046d5-f4d0-4526-9ea5-6f3282417881"/>
+					<box>
+						<bottomPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center">
+						<font fontName="华文宋体" size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{doctorAdvice}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="374" y="173" width="30" height="15" uuid="84632a64-ebec-42bd-b910-8bd12189144a">
+						<printWhenExpression><![CDATA[$P{isSign}]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="华文宋体" size="9"/>
+					</textElement>
+					<text><![CDATA[签名：]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="401" y="173" width="69" height="15" uuid="ef61326f-3ea6-494d-923a-8d50d64bc2a3">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<printWhenExpression><![CDATA[$P{isSign}]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="华文宋体" size="9"/>
+					</textElement>
+				</textField>
+				<staticText>
+					<reportElement x="474" y="173" width="28" height="15" uuid="d3f98778-43be-428e-95d1-e4b5f673d2f7"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="华文宋体" size="9"/>
+					</textElement>
+					<text><![CDATA[日期：]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="2" y="207" width="268" height="180" uuid="57149a1b-231e-4148-a87a-cc150808762f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$F{sveShow}]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="8" y="8" width="50" height="14" uuid="867de14b-7cc1-4f76-9785-8c33e875b8b7"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[单发]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="8" y="33" width="50" height="14" uuid="bb1ac10e-62ca-4ebf-ac98-116ee9326f08"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[成对]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="8" y="108" width="50" height="14" uuid="f52fdfa6-8ee4-4b54-860f-70e8fb2d7a12"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[室上速]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="8" y="133" width="50" height="14" uuid="bfea1d9e-be19-468c-bcaa-2ac358b92be8"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[总数]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="68" y="33" width="33" height="13" uuid="214ee362-f796-4161-8e9a-0cd6059120f4"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{sveCouplet}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="68" y="83" width="33" height="13" uuid="e8d90dfd-8ac6-4f4e-996c-e9a41fa4664c"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{sveLvte}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="68" y="8" width="33" height="14" uuid="2a486a7f-dcce-4ced-abaf-55ceed84a9cd">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{sveIsolated}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="68" y="58" width="33" height="14" uuid="ee8432f4-4b44-4c0f-b2bd-18f2c08f1e34">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{sveLvbe}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="104" y="8" width="33" height="14" uuid="c36d5794-168b-4ae3-abdb-ef48f229af65">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{sveIsolatedPercent}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="104" y="33" width="33" height="14" uuid="9f39535f-501d-4aa6-94b6-ef4653724c22">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{sveCoupletPercent}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="8" y="58" width="50" height="14" uuid="c6150a79-37e4-4fd8-b0ef-6ba9f8ba2ef3"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[二联律]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="8" y="83" width="50" height="14" uuid="2254212e-9c4a-4fa9-8e49-f9cc25001989"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[三联律]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="68" y="108" width="36" height="14" uuid="55867e41-5bdf-4e76-87d4-c3c691ee0d5d">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{svtCount}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="68" y="133" width="78" height="14" uuid="70303a72-4f3d-4ca5-9602-1310dc5909d7">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{sveCount}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="104" y="108" width="73" height="14" uuid="37a93c65-aa5a-4dfe-a885-a91cf9db5829">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{svtTime}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="282" y="207" width="269" height="180" uuid="cf01f6df-7227-4697-bc84-c6980907572e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<printWhenExpression><![CDATA[$F{veShow}]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="8" y="8" width="50" height="14" uuid="2b29f2eb-8694-43c3-9aee-60c1bce68646"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[单发]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="8" y="33" width="50" height="14" uuid="4266e5b0-41e4-44a5-b2cc-6b6e095c812e"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[成对]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="8" y="133" width="50" height="14" uuid="dd6114b3-3dc4-4cd8-9b9a-36d3faab026f"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[室速]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="8" y="158" width="50" height="14" uuid="ecaed6f4-79e1-45d0-a9f2-12e8258cf602"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[总数]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="8" y="83" width="50" height="14" uuid="f6887b9a-d8c7-4c2a-b48f-38ac25888d86"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[二联律]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="8" y="108" width="50" height="14" uuid="8b9677d3-5e63-464e-9251-ca70539afab7"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[三联律]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="68" y="108" width="100" height="14" uuid="7b031053-7dac-445b-9124-42d086464e20"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{veLvte}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="68" y="83" width="100" height="14" uuid="54d5f0a5-54cf-4e56-b9b9-596e3740f297">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{veLvbe}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="68" y="133" width="33" height="14" uuid="ae13b156-e6b3-4708-afce-e244f26120fa">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{vtCount}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="68" y="8" width="33" height="14" uuid="cdf254c5-ae19-4fb4-9fe4-ecdca4d011ac">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{veIsolated}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="68" y="33" width="33" height="14" uuid="80870419-ec1c-47ce-8fba-a53ffacde83c">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{veCouplet}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="68" y="158" width="100" height="14" uuid="b309e435-eba7-43b5-abe0-d9749f1e7001"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{veCount}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="104" y="8" width="33" height="14" uuid="1c245c3a-7602-4015-a837-f13d9607b6d9">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{veIsolatedPercent}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="104" y="33" width="33" height="14" uuid="2ca1e570-7f32-41df-b20b-c850b9e6b8ad">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{veCoupletPercent}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="" style="ront" x="8" y="58" width="50" height="14" uuid="823774f0-0418-4b34-a799-e13b535489ea"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[RonT]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="68" y="58" width="33" height="14" uuid="cd135787-96a9-4534-b10f-7598b82557ce">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{veRont}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="105" y="58" width="32" height="14" uuid="1fb97056-bfb6-4950-b64d-8d8964f3aaae">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{veRontPercent}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="104" y="133" width="74" height="14" uuid="eb037c35-e9ce-40a5-8ce4-48e604145add">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{vtTime}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<staticText>
+				<reportElement x="2" y="399" width="268" height="20" uuid="48408098-3abc-4aa4-a419-576338d116c1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="华文宋体" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[房颤分析]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="2" y="420" width="268" height="114" uuid="49440c57-fccb-46d5-aae6-8751a3eb77a7">
+					<printWhenExpression><![CDATA[$F{afShow}]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textField>
+					<reportElement x="81" y="13" width="84" height="14" uuid="30fe9015-f340-4e5f-8efc-61577f9784b2"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{afBeats}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="8" y="13" width="69" height="14" uuid="3ebb8fa6-62e1-40c6-8b61-cd858e10be53"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[房颤总心搏数]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="174" y="13" width="50" height="14" uuid="24cf1f59-3281-4cfb-9333-f2ab786a8520"/>
+					<textElement>
+						<font fontName="华文宋体" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA["("+$F{afPercent}+")"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="174" y="38" width="50" height="14" uuid="34f567c1-d09a-4eeb-b963-9917d1915029"/>
+					<textElement>
+						<font fontName="华文宋体" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA["(共"+$F{afNums}+"阵)"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="82" y="38" width="83" height="14" uuid="ff08e545-5de1-489e-8b79-0939ea92aa86"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{afTimes}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="8" y="38" width="57" height="14" uuid="2f269c94-fe7c-46cd-a827-c91866089dba"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[总持续时间]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="81" y="88" width="100" height="14" uuid="324da12f-1dd3-49c7-8f7f-844911048513"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{afMaxRate}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="8" y="63" width="68" height="14" uuid="0528a371-ba08-4a22-8976-b256d0c4c092"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[最长一阵时长]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="81" y="63" width="100" height="14" uuid="203657a5-b728-455b-96d3-d7776bf6ba13"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{afLongestTimes}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="8" y="88" width="61" height="14" uuid="5e6073eb-1210-4a0d-826a-13f4cd3fd68d"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[最快一阵心率]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="282" y="420" width="268" height="113" uuid="07e977fc-25f7-412f-9ded-092ffbd739c7"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="8" y="38" width="50" height="14" uuid="0f8084aa-4673-49fd-a7ea-dd073119b86d"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[SDNN Index]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="8" y="63" width="50" height="14" uuid="67c928f1-bb2d-425e-9aa2-13933b9042e7"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[RMSSD]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="8" y="88" width="52" height="14" uuid="b8f54d5b-be4d-4b2f-9094-8529025c056a">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[pNN50 (%)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="107" y="13" width="50" height="14" uuid="7c86b096-7c5b-47d5-ad7b-114dca209c99"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[三角指数]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="107" y="38" width="50" height="14" uuid="3d530aff-54a4-4f84-be29-c0f30d1fbdc9"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[HF]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="8" y="13" width="50" height="14" uuid="3ca94a09-28cf-4df7-8be2-3a789910fdc8"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[SDNN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="107" y="63" width="50" height="14" uuid="83d711a1-0835-4bbe-8933-3ba7fb044afd"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[LF]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="107" y="88" width="50" height="14" uuid="366c3eeb-cc77-4688-9b36-78c8d4a349a4"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[VLF]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="69" y="88" width="31" height="14" uuid="f1e56bad-b4ce-4c53-baea-871372fd7dd9"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{hrvPnn50}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="174" y="88" width="31" height="14" uuid="cf32483c-c322-4642-a982-6227c6f2848e"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{hrvVlf}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="69" y="63" width="31" height="14" uuid="ab557c20-dafc-497c-978d-1757ce2875c1">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{hrvRmsdd}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="174" y="38" width="31" height="14" uuid="b2239119-6c60-4908-9525-2d074d27e7f3">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{hrvHf}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="69" y="38" width="31" height="14" uuid="08080050-8b63-419b-b11b-0d64313f8c87"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{hrvSdnnIndex}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="174" y="63" width="31" height="14" uuid="f044b91a-9b89-47f1-bba3-c3db0b7c68ec">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{hrvLf}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="174" y="13" width="31" height="14" uuid="71b6f586-682a-4a7c-809f-a09bb5c69138">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{hrvTi}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="69" y="13" width="31" height="14" uuid="5e20ed63-f127-46e4-88f9-eae42c0bb568">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{hrvSdnn}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="2" y="120" width="550" height="54" uuid="6efa17cc-b053-441d-8f06-88ef3397bfa1"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="8" y="8" width="39" height="14" uuid="62765a19-d0d9-4945-9a2e-e74b962fea88"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[最快心率]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="8" y="31" width="39" height="14" uuid="9200876e-a52c-4d6e-ba29-f5a4cd08bdaf"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[最慢心率]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="368" y="8" width="39" height="14" uuid="20a528f5-dbe4-40b6-beaa-fbafcf591904"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[平均心率]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="222" y="31" width="85" height="14" uuid="a54100f1-a824-4a8b-967d-c060bf345a0e">
+						<printWhenExpression><![CDATA[$F{minRateTime}!=null]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font fontName="华文宋体" size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{minRateTime}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="223" y="8" width="84" height="14" uuid="12782d6d-97b8-4213-bcb5-4d61b9c1c440">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<printWhenExpression><![CDATA[$F{maxRateTime}!=null]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font fontName="华文宋体" size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{maxRateTime}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="54" y="8" width="48" height="14" uuid="18b5d824-2e93-4698-9b22-fa3255835793"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{maxRate}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="415" y="8" width="45" height="14" uuid="c3120ca1-bf01-4d1a-afb1-ae31753b6ebe"/>
+					<textElement textAlignment="Left">
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{avgRate}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="54" y="31" width="50" height="14" uuid="c4948c9d-fe69-45fa-bc1d-8a57367eef90"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="华文宋体" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{minRate}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="178" y="8" width="39" height="14" uuid="8a6d5e00-bb14-41ed-b6d1-9929fd67147e"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[发生于]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="178" y="31" width="39" height="14" uuid="33f476c8-aa85-41e2-8b48-6893719ab4b8"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[发生于]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="368" y="32" width="29" height="14" uuid="d991d105-7e71-4c89-bca4-d5a8345b5418"/>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[心搏数]]></text>
+				</staticText>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement x="415" y="32" width="37" height="14" uuid="ebb2e57e-d54d-4aae-b292-e07df765ccdc">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{beatNum}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="2" y="0" width="550" height="86" uuid="1a2a92d9-6093-4319-91fc-827d224be512"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="9" y="11" width="30" height="14" uuid="ab5b19cd-aacc-4775-8760-6909072e2b9c">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[姓名]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="179" y="11" width="40" height="14" uuid="37a57892-be2e-4ad8-a0e2-8fd637fe04ad">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left">
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[出生日期]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="368" y="11" width="30" height="14" uuid="777b358f-0e6b-42b4-9c39-4d52461d2755">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left">
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[性  别]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="179" y="36" width="40" height="14" uuid="485415ac-0a89-40f0-8677-2f2e40ffd020">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left">
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[住院号]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="9" y="61" width="40" height="14" uuid="26f08fe6-680d-41d9-b4b4-52da73badec9">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[记录时长]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="226" y="11" width="82" height="14" uuid="8e159b06-72ad-445e-9408-4efa4a4ba9da">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{birthday}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="56" y="36" width="69" height="14" uuid="d2f050bf-be05-4049-bde1-3dd53ee4bea9">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{patientId}]]></textFieldExpression>
+				</textField>
+				<textField pattern="">
+					<reportElement x="56" y="61" width="90" height="14" uuid="12523e0f-4284-4a4f-9fcf-0fd99fdae6a9">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{recordTimes}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="150" y="61" width="178" height="15" uuid="6460f802-a169-4f75-85e8-7d301c6cf2a2"/>
+					<textElement>
+						<font fontName="华文宋体" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{beginTime}+"~"+$F{endTime}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="415" y="11" width="60" height="14" uuid="58540595-9c63-4736-a7fa-9d32daadbbf2">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{sex}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="56" y="11" width="64" height="14" uuid="5bcb76d7-e8ee-4006-baa3-024330e444e5">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="226" y="36" width="82" height="14" uuid="1153c686-e4fc-41ca-80d0-94ea43508d88">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{hospitalNo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="9" y="36" width="40" height="14" uuid="7739e7a0-f458-4605-ab8d-91e94687449f"/>
+					<textElement textAlignment="Left">
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{patientId}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="368" y="36" width="39" height="14" uuid="ae7674ba-8286-4df4-a4ce-8d68df3034ee">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left">
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[科室床号]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="415" y="36" width="61" height="14" uuid="a2d0d2d9-76a7-463d-8efa-d50e7e0a4c7c">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="华文宋体" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bedNo}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="368" y="61" width="40" height="14" uuid="d24476e3-caed-4401-b6cf-db9f100988a8"/>
+					<textElement textAlignment="Left">
+						<font fontName="华文宋体" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[有效时长]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="415" y="61" width="64" height="14" uuid="c20fee2b-3d0f-4b74-a703-11f33c9f663f"/>
+					<textElement>
+						<font fontName="华文宋体" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{analysisTimes}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<frame>
+				<reportElement x="1" y="4" width="554" height="16" uuid="a7e703f1-b31a-4871-9c69-0d644817d360"/>
+				<textField>
+					<reportElement x="166" y="2" width="220" height="14" uuid="273d308f-be22-4aea-8f64-282ef08e0685">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="华文宋体" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{copyright}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="470" y="2" width="84" height="14" uuid="03eb627d-5993-4440-9cf7-af133fc4e177">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="华文宋体" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="4" y="2" width="84" height="14" uuid="d29951f7-055b-4ab8-89d6-99a510e61a10">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="华文宋体" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{sn}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+</jasperReport>
